@@ -1,52 +1,115 @@
-/* Reset some default styles */
+/* 🌟 Reset de estilos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Base styles */
+/* 🌟 Base styles */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #000; /* Black background for all pages */
-  color: #fff; /* White text color for all pages */
+  background-color: #000;
+  color: #fff;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Header styles */
+/* 🌟 Header Estilizado */
 header {
-  background-color: #333;
+  background: linear-gradient(90deg, #2c3e50, #34495e);
   color: #fff;
-  padding: 10px 0;
+  padding: 15px 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out; /* Animación de aparición */
+}
+
+/* 🔹 Header escondido */
+header.hidden {
+  transform: translateY(-100%);
+}
+
+/* 🔹 Estilos del logo */
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #f1c40f;
+  text-decoration: none;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
 }
 
 header nav ul {
   list-style: none;
   display: flex;
-  justify-content: flex-end;
-  margin-right: 20px;
+  gap: 25px;
 }
 
 header nav ul li {
-  margin-left: 20px;
+  position: relative;
 }
 
 header nav ul li a {
-  color: #fff;
+  color: #ecf0f1;
   text-decoration: none;
-  font-weight: bold;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
 }
 
 header nav ul li a:hover {
-  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
 }
 
-/* Hero section */
+/* 🔹 Responsive: Ocultar el header en móviles */
+@media (max-width: 768px) {
+  header {
+    transform: translateY(-100%);
+  }
+}
+
+/* 🌟 Responsive (Móviles) */
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+
+/* 🌟 Hero Section */
 .hero {
   text-align: center;
   padding: 50px 20px;
-  background-color: #111; /* Changed from #007bff to #111 */
+  background-color: #111;
   color: #fff;
 }
 
@@ -64,7 +127,7 @@ header nav ul li a:hover {
   background-color: #e64a19;
 }
 
-/* Team section */
+/* 🌟 Team Section */
 .team {
   display: flex;
   flex-wrap: wrap;
@@ -113,7 +176,7 @@ header nav ul li a:hover {
   background-color: #0056b3;
 }
 
-/* Footer styles */
+/* 🌟 Footer */
 footer {
   text-align: center;
   padding: 20px 0;
@@ -121,7 +184,8 @@ footer {
   color: #fff;
   margin-top: 20px;
 }
-/* Ensure footer is always at the bottom */
+
+/* 🌟 Evitar que el footer suba */
 html, body {
   height: 100%;
 }
@@ -135,118 +199,126 @@ main {
   flex: 1;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .team-member {
-    padding: 10px;
-  }
-
-  .team-member a {
-    padding: 8px 16px;
-  }
-}
-/* 🌟 Asegurar que la tabla ocupa todo el ancho disponible */
+/* 🌟 Ajuste para evitar desbordamiento en móviles */
 .periodic-table-container {
-  width: 100vw; /* Ocupar todo el ancho de la ventana */
-  overflow-x: auto; /* Permitir desplazamiento horizontal */
+  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-/* 🎨 Estilos generales de la tabla periódica */
+/* 📌 TABLA PERIÓDICA EN ESCRITORIO */
 .periodic-table {
   display: grid;
-  grid-template-columns: repeat(18, minmax(40px, 1fr)); /* 18 columnas en pantallas grandes */
+  grid-template-columns: repeat(18, 1fr); /* 18 columnas */
+  grid-template-rows: repeat(7, auto); /* 7 filas */
   gap: 5px;
   padding: 10px;
   background-color: #222;
   border-radius: 10px;
-  max-width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
 }
+
 
 /* 📦 Estilos de los elementos */
 .element {
+  position: relative; /* Necesario para posicionar la barra */
   background-color: #444;
   color: #fff;
-  width: 100%;
-  height: auto;
-  min-height: 80px;
+  gap: 10px;
+  width: 80px;
+  height: 80px;
+  min-height: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  transition: transform 0.3s, background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
   text-align: center;
   padding: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   font-family: Arial, sans-serif;
+  cursor: pointer;
+  overflow: hidden; /* Para que la barra no sobresalga */
+  
 }
+
+.symbol {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.element::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px; /* Grosor de la barra */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.element.no-metal::before { background-color: #4CAF50; }  /* Verde */
+.element.gas-noble::before { background-color: #2196F3; } /* Azul */
+.element.metal-alcalino::before { background-color: #FF5722; } /* Rojo anaranjado */
+.element.metal-alcalinoterreo::before { background-color: #FF9800; } /* Naranja */
+.element.metaloide::before { background-color: #9C27B0; } /* Púrpura */
+.element.halogeno::before { background-color: #FFC107; } /* Amarillo */
+.element.metal-de-transicion::before { background-color: #607D8B; } /* Gris azulado */
+.element.metal-depost-transicion::before { background-color: #795548; } /* Marrón */
+.element.lantanido::before { background-color: #673AB7; } /* Morado oscuro */
+.element.actinido::before { background-color: #E91E63; } /* Rosa fuerte */
+
+
+  
+
 
 /* 🔥 Efecto hover */
 .element:hover {
   transform: scale(1.1);
   background-color: #666;
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.3);
 }
 
-/* 📌 Tipografía y espaciado */
-.element .symbol {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.element .number {
-  font-size: 0.8em;
-}
-
-.element .name {
-  font-size: 0.9em;
-  margin-top: 5px;
-}
-
-.element .weight {
-  font-size: 0.7em;
-  margin-top: 5px;
-}
-
-/* 📱 **Pantallas grandes (1024px o más)** - Mantiene 18 columnas */
-@media (max-width: 1200px) {
-  .periodic-table {
-    grid-template-columns: repeat(12, minmax(40px, 1fr)); /* Se reduce a 12 columnas */
-  }
-
-  .element {
-    min-height: 70px;
-    font-size: 0.9em;
-  }
-}
-
-/* 📱 **Pantallas medianas (768px - Tablets y laptops pequeñas)** */
-@media (max-width: 992px) {
-  .periodic-table {
-    grid-template-columns: repeat(9, minmax(40px, 1fr)); /* Se reduce a 9 columnas */
-  }
-
-  .element {
-    min-height: 65px;
-    font-size: 0.8em;
-  }
-
-  .element .symbol {
-    font-size: 1.2em;
-  }
-
-  .element .name,
-  .element .weight,
-  .element .number {
-    font-size: 0.7em;
-  }
-}
-
-/* 📱 **Móviles grandes (480px - 767px)** */
+/* 🌟 OCULTAR LA TABLA PERIÓDICA EN MÓVILES */
 @media (max-width: 768px) {
   .periodic-table {
-    grid-template-columns: repeat(6, minmax(40px, 1fr)); /* Se reduce a 6 columnas */
+    display: none !important;
+  }
+}
+
+/* 🌟 📖 PAGINACIÓN EN MÓVILES */
+
+
+.pages {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔥 SOLO MOSTRAR LA PÁGINA ACTIVA */
+.page {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.page.active {
+  display: grid !important;
+}
+
+/* 📦 Estilos de los elementos en la paginación */
+@media (max-width: 768px) {
+  .pages {
+    display: flex !important;
   }
 
   .element {
@@ -255,38 +327,12 @@ main {
   }
 
   .element .symbol {
-    font-size: 1em;
+    font-size: 2em;
   }
 }
 
-/* 📱 **Móviles pequeños (Menos de 480px)** */
-@media (max-width: 480px) {
-  .periodic-table {
-    grid-template-columns: repeat(4, minmax(40px, 1fr)); /* Se reduce a 4 columnas */
-  }
-
-  .element {
-    min-height: 50px;
-    font-size: 0.6em;
-  }
-
-  .element .symbol {
-    font-size: 0.9em;
-  }
-
-  .element .name,
-  .element .weight,
-  .element .number {
-    font-size: 0.5em;
-  }
-}
-
-/* 📱 **Ultra compacto para dispositivos muy pequeños (<360px)** */
+/* 📱 **Móviles ultra pequeños (<360px)** */
 @media (max-width: 360px) {
-  .periodic-table {
-    grid-template-columns: repeat(3, minmax(40px, 1fr)); /* Se reduce a 3 columnas */
-  }
-
   .element {
     min-height: 45px;
     font-size: 0.5em;
@@ -296,9 +342,83 @@ main {
     font-size: 0.8em;
   }
 
-  .element .name,
-  .element .weight,
-  .element .number {
+  .element .name, .element .weight, .element .number {
     font-size: 0.4em;
   }
 }
+
+/* 🌟 Paginación */
+.pagination {
+  display: none;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    display: flex;
+  }
+}
+
+.pagination button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.8em;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.pagination button:hover {
+  background-color: #0077cc;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 📌 Estilos del modal */
+.modal {
+  display: none; /* Ocultar por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+/* 📌 Contenido del modal */
+.modal-content {
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* 📌 Botón para cerrar el modal */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+
+
+
+
+  
