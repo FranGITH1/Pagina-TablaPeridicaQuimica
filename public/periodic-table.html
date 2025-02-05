@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tabla Periódica</title>
-    <link rel="stylesheet" href="../assets/css/styles.css" />
+    
+    
+    <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
   <body>
     <header id="header">
+    
+      <button id="toggle-menu" class="menu-btn">☰</button>
       <nav>
-        <ul>
+        <ul id="nav-menu">
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="about.html">Acerca de</a></li>
           <li><a href="contact.html">Contacto</a></li>
@@ -20,7 +24,6 @@
 
     <main>
       <section id="table">
-      
         <div class="periodic-table" id="periodic-table"></div>
       </section>
 
@@ -34,28 +37,28 @@
       </div>
 
       <!-- 📌 Modal para mostrar información del elemento -->
-<div id="element-modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2 id="modal-title"></h2>
-    <p><strong>Símbolo:</strong> <span id="modal-symbol"></span></p>
-    <p><strong>Número Atómico:</strong> <span id="modal-number"></span></p>
-    <p><strong>Peso Atómico:</strong> <span id="modal-weight"></span></p>
-    <p><strong>Curiosidad:</strong> <span id="modal-curiosity"></span></p>
-    <p><strong> Grupo: </strong> <span id="modal-type"></span></p>
-
-
-  </div>
-</div>
-
+      <div id="element-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 id="modal-title"></h2>
+          <p><strong>Símbolo:</strong> <span id="modal-symbol"></span></p>
+          <p>
+            <strong>Número Atómico:</strong> <span id="modal-number"></span>
+          </p>
+          <p><strong>Peso Atómico:</strong> <span id="modal-weight"></span></p>
+          <p><strong>Curiosidad:</strong> <span id="modal-curiosity"></span></p>
+          <p><strong> Grupo: </strong> <span id="modal-type"></span></p>
+        </div>
+      </div>
     </main>
 
     <footer id="footer">
-      <p>&copy; 2025 Tabla Periódica Interactiva. Todos los derechos reservados.</p>
+      <p>
+        &copy; 2025 Tabla Periódica Interactiva. Todos los derechos reservados.
+      </p>
     </footer>
 
     <!-- ✅ Cargar el script correctamente -->
     <script src="../assets/javascript/main.js"></script>
   </body>
 </html>
-

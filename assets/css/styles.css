@@ -16,58 +16,29 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
-/* 🌟 Header Estilizado */
+/* 🔹 Header base */
 header {
-  background: linear-gradient(90deg, #2c3e50, #34495e);
-  color: #fff;
-  padding: 15px 0;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  transition: transform 0.3s ease-in-out; /* Animación de aparición */
-}
-
-/* 🔹 Header escondido */
-header.hidden {
-  transform: translateY(-100%);
-}
-
-/* 🔹 Estilos del logo */
-.logo {
-  font-size: 1.8em;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #f1c40f;
-  text-decoration: none;
-}
-
-header nav {
+  background-color: #000;
+  color: white;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
-}
-
-header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-header nav ul li {
   position: relative;
 }
 
+/* 🔹 Menú de navegación */
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
 header nav ul li a {
-  color: #ecf0f1;
+  color: white;
   text-decoration: none;
   font-size: 1em;
-  font-weight: 600;
+  font-weight: bold;
   padding: 8px 12px;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
@@ -75,35 +46,51 @@ header nav ul li a {
 
 header nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
 }
 
-/* 🔹 Responsive: Ocultar el header en móviles */
+/* 🔹 Estilos del botón hamburguesa */
+.menu-btn {
+  display: none; /* Oculto en escritorio */
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
 @media (max-width: 768px) {
-  header {
-    transform: translateY(-100%);
+  .menu-btn {
+    display: block;        /* Se muestra en móviles */
+    position: absolute;    /* Posicionamiento absoluto */
+    top: 15px;             /* Ajusta según necesites */
+    left: 15px;            /* Ajusta según necesites */
+    z-index: 999;          /* Asegúrate de que quede por encima */
   }
+
+ 
+    /* Menú oculto por defecto */
+    nav ul {
+      display: none !important;
+      flex-direction: column;
+    }
+    /* Menú visible cuando tiene .active */
+    nav ul.active {
+      display: flex !important;
+      flex-direction: column;
 }
-
-/* 🌟 Responsive (Móviles) */
-@media (max-width: 768px) {
-  header nav {
-    flex-direction: column;
-    text-align: center;
-    padding: 10px 20px;
+.menu-btn.hidden {
+    display: none;
   }
 
-  .logo {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    gap: 15px;
-  }
 }
+  
 
+
+.logo {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
 
 /* 🌟 Hero Section */
 .hero {
@@ -186,7 +173,8 @@ footer {
 }
 
 /* 🌟 Evitar que el footer suba */
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -222,7 +210,6 @@ main {
   margin: 0 auto;
 }
 
-
 /* 📦 Estilos de los elementos */
 .element {
   position: relative; /* Necesario para posicionar la barra */
@@ -244,7 +231,6 @@ main {
   font-family: Arial, sans-serif;
   cursor: pointer;
   overflow: hidden; /* Para que la barra no sobresalga */
-  
 }
 
 .symbol {
@@ -262,20 +248,36 @@ main {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-.element.no-metal::before { background-color: #4CAF50; }  /* Verde */
-.element.gas-noble::before { background-color: #2196F3; } /* Azul */
-.element.metal-alcalino::before { background-color: #FF5722; } /* Rojo anaranjado */
-.element.metal-alcalinoterreo::before { background-color: #FF9800; } /* Naranja */
-.element.metaloide::before { background-color: #9C27B0; } /* Púrpura */
-.element.halogeno::before { background-color: #FFC107; } /* Amarillo */
-.element.metal-de-transicion::before { background-color: #607D8B; } /* Gris azulado */
-.element.metal-depost-transicion::before { background-color: #795548; } /* Marrón */
-.element.lantanido::before { background-color: #673AB7; } /* Morado oscuro */
-.element.actinido::before { background-color: #E91E63; } /* Rosa fuerte */
-
-
-  
-
+.element.no-metal::before {
+  background-color: #4caf50;
+} /* Verde */
+.element.gas-noble::before {
+  background-color: #2196f3;
+} /* Azul */
+.element.metal-alcalino::before {
+  background-color: #ff5722;
+} /* Rojo anaranjado */
+.element.metal-alcalinoterreo::before {
+  background-color: #ff9800;
+} /* Naranja */
+.element.metaloide::before {
+  background-color: #9c27b0;
+} /* Púrpura */
+.element.halogeno::before {
+  background-color: #ffc107;
+} /* Amarillo */
+.element.metal-de-transicion::before {
+  background-color: #607d8b;
+} /* Gris azulado */
+.element.metal-depost-transicion::before {
+  background-color: #795548;
+} /* Marrón */
+.element.lantanido::before {
+  background-color: #673ab7;
+} /* Morado oscuro */
+.element.actinido::before {
+  background-color: #e91e63;
+} /* Rosa fuerte */
 
 /* 🔥 Efecto hover */
 .element:hover {
@@ -293,7 +295,6 @@ main {
 }
 
 /* 🌟 📖 PAGINACIÓN EN MÓVILES */
-
 
 .pages {
   display: none;
@@ -342,7 +343,9 @@ main {
     font-size: 0.8em;
   }
 
-  .element .name, .element .weight, .element .number {
+  .element .name,
+  .element .weight,
+  .element .number {
     font-size: 0.4em;
   }
 }
@@ -416,9 +419,3 @@ main {
   cursor: pointer;
   color: #fff;
 }
-
-
-
-
-
-  
