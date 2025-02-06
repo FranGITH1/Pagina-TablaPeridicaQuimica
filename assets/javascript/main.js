@@ -1078,16 +1078,42 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
- // Seleccionamos el botón y el <ul>
-const menuBtn = document.querySelector('.menu-btn');
-const navUl   = document.querySelector('nav ul');
-
-// Evento para togglear (agregar/quitar) la clase .active
-menuBtn.addEventListener('click', () => {
-  navUl.classList.toggle('active');
-
-  menuBtn.classList.toggle('hidden');
-});
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.querySelector('.menu-btn');
+    const navList = document.querySelector('nav ul');
+  
+    let hideMenuTimeout; // Variable para almacenar el temporizador
+  
+    menuBtn.addEventListener('click', () => {
+      // Alterna la clase 'active' para mostrar/ocultar el menú
+      navList.classList.toggle('active');
+  
+      // Si el menú se muestra, inicia/ reinicia el temporizador de 5s
+      if (navList.classList.contains('active')) {
+        resetHideMenuTimer();
+      } else {
+        // Si se oculta manualmente, limpiamos el temporizador
+        clearTimeout(hideMenuTimeout);
+      }
+    });
+  
+    // Opcional: Si quieres que el menú se cierre al hacer clic en un enlace
+    navList.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navList.classList.remove('active');
+        clearTimeout(hideMenuTimeout);
+      }
+    });
+  
+    // Función para reiniciar el temporizador de ocultar menú
+    function resetHideMenuTimer() {
+      clearTimeout(hideMenuTimeout);
+      hideMenuTimeout = setTimeout(() => {
+        navList.classList.remove('active');
+      }, 5000); // 5000 ms = 5 segundos
+    }
+  });
+  
 
 
 
