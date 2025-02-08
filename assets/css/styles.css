@@ -143,6 +143,7 @@ nav {
     right: 1rem;           /* Separación del lado derecho */
     padding: 1rem;
     border-radius: 5px;
+    z-index: 9999;
   }
 
   /* Cuando se active la clase .active, se muestra el menú en móvil */
