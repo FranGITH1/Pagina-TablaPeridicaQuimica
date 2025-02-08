@@ -31,11 +31,7 @@ body {
 /* =========================
    ESTILOS GENERALES
 ========================= */
-body {
-  font-family: sans-serif;
-  background: #f8f8f8;
-  color: #333;
-}
+
 
 /* =========================
    HEADER
@@ -142,15 +138,16 @@ nav {
     top: 60px;             /* Ajustar la posición debajo del header */
     right: 1rem;           /* Separación del lado derecho */
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     z-index: 9999;
   }
+}
 
   /* Cuando se active la clase .active, se muestra el menú en móvil */
   #nav-menu.active {
     display: flex;
   }
-}
+
 
 /* Para pantallas mayores a 768px (desktop) */
 @media (min-width: 769px) {
