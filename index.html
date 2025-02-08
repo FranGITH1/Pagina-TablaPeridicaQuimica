@@ -1,45 +1,62 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla Periodica</title>
-    
-    <link rel="stylesheet" href="/assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabla Periodica</title>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
-    
-    <header id="header">
-        <button id="toggle-menu" class="menu-btn">☰</button>
+  <header id="header">
+    <div></div>
+    <div id="menu-container">
+      <button id="menu-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
         <nav>
-            <ul id="nav-menu">
-                <li><a href="">Inicio</a></li>
-                <li><a href="./public/about.html">Acerca de</a></li>
-                <li><a href="./public/contact.html">Contacto</a></li>
-                <li><a href="./public/periodic-table.html">Tabla Periódica</a></li>
-            </ul>
+          <ul id="nav-menu">
+            <li><a href="">Inicio</a></li>
+            <li><a href="./public/about.html">Acerca de</a></li>
+            <li><a href="./public/contact.html">Contacto</a></li>
+            <li><a href="./public/periodic-table.html">Tabla Periódica</a></li>
+          </ul>
         </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <h1>Bienvenidos a Tu Tabla Periodica Favorita</h1>
-            <p>Explora los elementos de la tabla periódica de manera interactiva.
-              <br>
-              Instituto Tecnologico de Matamoros
-              <br>
-              Ingenieria en Sistemas Computacionales 
-            </p>
-            <a href="./public/periodic-table.html" class="cta-button">Ver Tabla</a>
-        </section>
-        <section id="table">
-            
-            <!-- Aquí puedes agregar la tabla periódica -->
-        </section>
-    </main>
-    <footer id="footer">
-        <p>&copy; 2025 Tabla Periodica Interactiva. Todos los derechos reservados.</p>
-    </footer>
-    <script src="assets/javascript/main.js"></script>
-    <script src="assets/javascript/interactivity.js"></script>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Bienvenidos a Tu Tabla Periodica Favorita</h1>
+      <p>
+        Explora los elementos de la tabla periódica de manera interactiva.
+        <br />
+        Instituto Tecnologico de Matamoros
+        <br />
+        Ingenieria en Sistemas Computacionales 
+      </p>
+      <a href="./public/periodic-table.html" class="cta-button">Ver Tabla</a>
+    </section>
+
+    <section id="table">
+      <!-- Aquí puedes agregar la tabla periódica -->
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p>&copy; 2025 Tabla Periodica Interactiva. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>const menuBtn = document.getElementById('menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });</script>
+
+ 
 </body>
 </html>
+```

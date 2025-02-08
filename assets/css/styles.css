@@ -9,97 +9,165 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #000;
+  background-color: #000000;
   color: #fff;
   padding: 20px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-/* 🔹 Header base */
-header {
-  background-color: #000;
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-/* 🔹 Título (puedes ajustarlo según tu diseño) */
-header h1 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-/* 🔹 Menú de navegación */
-header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+/* ================================
+   HEADER
+================================ */
+/* =========================
+   RESETEO BÁSICO
+========================= */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1em;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
+/* =========================
+   ESTILOS GENERALES
+========================= */
+body {
+  font-family: sans-serif;
+  background: #f8f8f8;
+  color: #333;
 }
 
-header nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+/* =========================
+   HEADER
+========================= */
+header {
+  background-color: #333; /* Fondo oscuro */
+  color: #fff;           /* Texto blanco */
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  justify-content: space-between; /* Separa título y menú */
 }
 
-/* 🔹 Estilos del botón hamburguesa */
-.menu-btn {
-  display: none; /* Oculto en escritorio */
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: white;
+/* Título */
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Contenedor del botón y el nav */
+#menu-container {
+  display: flex;
+  align-items: center;
+}
+
+/* =========================
+   BOTÓN HAMBURGUESA
+========================= */
+#menu-btn {
+  display: none;      /* Por defecto, oculto en escritorio */
+  flex-direction: column;
+  width: 2rem;
+  height: 1.5rem;
+  border: 0;
+  background: transparent;
+  justify-content: space-between;
   cursor: pointer;
-  padding: 10px;
 }
 
-/* 🔹 Responsive a máximo 768px */
+#menu-btn > div {
+  background: #fff;   /* Líneas blancas */
+  height: 2px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.3s;
+  transform-origin: left;
+}
+
+/* Efecto hover del botón */
+#menu-btn:hover > div:first-child {
+  transform: rotate(45deg);
+}
+#menu-btn:hover > div:nth-child(2) {
+  opacity: 0;
+}
+#menu-btn:hover > div:last-child {
+  transform: rotate(-45deg);
+}
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+nav {
+  margin-left: 1rem; /* Espacio entre el botón y el menú */
+}
+
+/* Por defecto, el ul se muestra en línea */
+#nav-menu {
+  list-style: none;
+  display: flex;              /* Para menú horizontal en escritorio */
+  justify-content: center;    /* Centrar los ítems en escritorio */
+  gap: 1rem;                  /* Separación entre enlaces */
+  transition: all 0.3s;
+}
+
+/* Enlaces del menú */
+#nav-menu li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+#nav-menu li a:hover {
+  background-color: #444; 
+  border-radius: 4px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+/* Para pantallas hasta 768px (móvil) */
 @media (max-width: 768px) {
-  .menu-btn {
-    display: block;        /* Se muestra en móviles */
-    position: absolute;    /* Posicionamiento absoluto */
-    top: 25px;             /* Ajusta según tu diseño */
-    right: 20px;           /* Ajusta según tu diseño */
-    z-index: 999;          /* Asegúrate de que quede por encima */
+  /* El botón hamburguesa aparece en móvil */
+  #menu-btn {
+    display: flex;
   }
 
-  /* Menú oculto por defecto en móvil */
-  nav ul {
-    display: none !important;
-    flex-direction: column;
-    gap: 0;                /* Ajusta el gap para columnar */
-    background-color: #000;/* Fondo para el menú desplegable */
-    position: absolute;    /* Para posicionar en la parte superior */
-    top: 60px;             /* Ajusta según tu diseño */
-    right: 0;
-    width: 100%;           /* Ocupa ancho completo en móvil */
-    margin: 0;
-    padding: 10px 0;
+  /* El menú por defecto no se muestra en móvil */
+  #nav-menu {
+    display: none;
+    flex-direction: column; /* Apilar elementos verticalmente */
+    background-color: #333; /* Mismo color que header */
+    position: absolute;     /* Para que flote sobre el contenido */
+    top: 60px;             /* Ajustar la posición debajo del header */
+    right: 1rem;           /* Separación del lado derecho */
+    padding: 1rem;
+    border-radius: 5px;
   }
 
-  /* Menú visible cuando tiene la clase .active */
-  nav ul.active {
+  /* Cuando se active la clase .active, se muestra el menú en móvil */
+  #nav-menu.active {
     display: flex;
   }
 }
 
-.menu-btn.hidden {
+/* Para pantallas mayores a 768px (desktop) */
+@media (min-width: 769px) {
+  /* Mostramos el menú siempre en escritorio */
+  #nav-menu {
+    display: flex;
+  }
+
+  /* Ocultamos el botón hamburguesa en escritorio */
+  #menu-btn {
     display: none;
   }
+}
+
+
+
+
+
 
 
   
@@ -382,13 +450,13 @@ main {
 }
 
 .pagination button {
-  background-color: #3498db;
+  background-color: #008eec;
   color: white;
   border: none;
-  padding: 8px 12px;
-  margin: 5px;
+  padding: 10px 12px;
+  margin: 10px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: 0.8em;
   transition: background-color 0.3s ease-in-out;
 }
