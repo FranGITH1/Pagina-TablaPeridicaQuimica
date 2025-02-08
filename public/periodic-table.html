@@ -17,10 +17,10 @@
       </button>
         <nav>
           <ul id="nav-menu">
-            <li><a href="">Inicio</a></li>
+            <li><a href="../index.html">Inicio</a></li>
             <li><a href="./public/about.html">Acerca de</a></li>
             <li><a href="./public/contact.html">Contacto</a></li>
-            <li><a href="./public/periodic-table.html">Tabla Periódica</a></li>
+            <li><a href="/public/periodic-table.html">Tabla Periódica</a></li>
           </ul>
         </nav>
     </div>
@@ -59,7 +59,16 @@
     </footer>
 
     <!-- Cargar el script correctamente -->
-    <script src="../assets/javascript/main.js"></script>
+     <link rel="stylesheet" href="../assets/javascript/main.js" />
+
+     <script>
+     const menuBtn = document.getElementById('menu-btn');
+      const navMenu = document.getElementById('nav-menu');
+  
+      menuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+      </script>
   </body>
 </html>
 
