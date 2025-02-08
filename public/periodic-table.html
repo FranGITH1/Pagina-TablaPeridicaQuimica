@@ -18,8 +18,8 @@
         <nav>
           <ul id="nav-menu">
             <li><a href="../index.html">Inicio</a></li>
-            <li><a href="./public/about.html">Acerca de</a></li>
-            <li><a href="./public/contact.html">Contacto</a></li>
+            <li><a href="/public/about.html">Acerca de</a></li>
+            <li><a href="/public/contact.html">Contacto</a></li>
             <li><a href="/public/periodic-table.html">Tabla Periódica</a></li>
           </ul>
         </nav>
@@ -59,7 +59,7 @@
     </footer>
 
     <!-- Cargar el script correctamente -->
-     <link rel="stylesheet" href="../assets/javascript/main.js" />
+    <script src="/assets/javascript/main.js"></script>
 
      <script>
      const menuBtn = document.getElementById('menu-btn');
@@ -68,7 +68,8 @@
       menuBtn.addEventListener('click', () => {
         navMenu.classList.toggle('active');
       });
-      </script>
+      
+    </script>
   </body>
 </html>
 
