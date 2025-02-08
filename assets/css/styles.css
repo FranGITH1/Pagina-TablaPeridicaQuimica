@@ -275,45 +275,43 @@ main {
 
 /* Contenedor principal de la tabla */
 .periodic-table-container {
+  /* Ocupa el ancho completo disponible y un máximo de 800px en pantallas grandes */
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto; 
+  max-width: 800px;
+
+  /* Centra horizontalmente el contenido */
+  margin: 0 auto;
   padding: 20px 0;
-  overflow-x: auto; /* Permite scroll horizontal si la tabla es demasiado ancha */
+
+  /* Permite desplazamiento horizontal si la tabla excede el ancho en móvil */
+  overflow-x: auto;
 }
 
-/* Tabla Periódica (versión escritorio por defecto) */
+/* Versión de la tabla para escritorio (por defecto) */
 .periodic-table {
   display: grid;
-  grid-template-columns: repeat(18, 1fr); /* 18 columnas */
-  grid-template-rows: repeat(7, auto);    /* 7 filas */
+  /* 18 columnas, 7 filas */
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(7, auto);
   gap: 5px;
   padding: 10px;
-  background-color: #222; 
+  background-color: #222;
   border-radius: 10px;
-  max-width: 90%;
+
+  /* Centrado dentro de su contenedor */
   margin: 0 auto;
 }
 
-/* Responsivo: en pantallas pequeñas, ajusta el número de columnas (opcional) */
-@media (max-width: 768px) {
-  .periodic-table {
-    grid-template-columns: repeat(9, 1fr); /* Menos columnas en dispositivos chicos */
-  }
-}
-
-
-/* 📦 Estilos de los elementos */
+/* ---- Estilos de cada celda (element) ---- */
 .element {
-  position: relative; /* Necesario para posicionar la barra */
+  position: relative; /* Para la barra superior (element::before) */
   background-color: #444;
   color: #fff;
-  gap: 10px;
-  width: 80px;
-  height: 80px;
-  min-height: 70px;
+  
+  /* Tamaño más pequeño en escritorio */
+  width: 60px;
+  height: 60px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -326,6 +324,7 @@ main {
   font-family: Arial, sans-serif;
   cursor: pointer;
   overflow: hidden; /* Para que la barra no sobresalga */
+  gap: 5px;
 }
 
 .symbol {
@@ -333,16 +332,125 @@ main {
   font-weight: bold;
 }
 
+/* Barra superior decorativa */
 .element::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 6px; /* Grosor de la barra */
+  height: 6px; 
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  background-color: #ff5555; /* El color que prefieras */
 }
+
+/* -----------------------------
+   RESPONSIVO: en pantallas 
+   de hasta 768px (móvil, tablet)
+------------------------------ */
+@media (max-width: 768px) {
+  /* Menos columnas para que la tabla se adapte mejor */
+  .periodic-table {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  /* Celdas aún más pequeñas en pantallas chicas */
+  .element {
+    width: 50px;
+    height: 50px;
+  }
+}
+/* Contenedor principal de la tabla */
+.periodic-table-container {
+  /* Ocupa el ancho completo disponible y un máximo de 800px en pantallas grandes */
+  width: 100%;
+  max-width: 800px;
+
+  /* Centra horizontalmente el contenido */
+  margin: 0 auto;
+  padding: 20px 0;
+
+  /* Permite desplazamiento horizontal si la tabla excede el ancho en móvil */
+  overflow-x: auto;
+}
+
+/* Versión de la tabla para escritorio (por defecto) */
+.periodic-table {
+  display: grid;
+  /* 18 columnas, 7 filas */
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(7, auto);
+  gap: 5px;
+  padding: 10px;
+  background-color: #222;
+  border-radius: 10px;
+
+  /* Centrado dentro de su contenedor */
+  margin: 0 auto;
+}
+
+/* ---- Estilos de cada celda (element) ---- */
+.element {
+  position: relative; /* Para la barra superior (element::before) */
+  background-color: #444;
+  color: #fff;
+  
+  /* Tamaño más pequeño en escritorio */
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  text-align: center;
+  padding: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  overflow: hidden; /* Para que la barra no sobresalga */
+  gap: 5px;
+}
+
+.symbol {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Barra superior decorativa */
+.element::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px; 
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #ff5555; /* El color que prefieras */
+}
+
+/* -----------------------------
+   RESPONSIVO: en pantallas 
+   de hasta 768px (móvil, tablet)
+------------------------------ */
+@media (max-width: 768px) {
+  /* Menos columnas para que la tabla se adapte mejor */
+  .periodic-table {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  /* Celdas aún más pequeñas en pantallas chicas */
+  .element {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
 .element.no-metal::before {
   background-color: #4caf50;
 } /* Verde */
