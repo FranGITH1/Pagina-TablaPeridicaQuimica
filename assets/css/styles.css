@@ -209,7 +209,8 @@ nav {
 }
 
 .team-member {
-  background-color: #444;
+
+  background-color: #2b2929;
   padding: 20px;
   margin: 10px;
   border-radius: 5px;
@@ -228,32 +229,37 @@ nav {
 .team-member h2 {
   font-size: 1.5em;
   margin-bottom: 10px;
+  text-shadow: #000;
 }
 
 .team-member p {
   font-size: 1em;
   margin-bottom: 10px;
+  color: white;
+}
+.team-member h3{
+  color: white;
 }
 
 .team-member a {
   display: inline-block;
   margin: 10px 0;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #ffffff;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
 }
 
 .team-member a:hover {
-  background-color: #0056b3;
+  background-color: #e9e9e9;
 }
 
 /* 🌟 Footer */
 footer {
   text-align: center;
   padding: 20px 0;
-  background-color: #333;
+  background-color: #000000;
   color: #fff;
   margin-top: 20px;
 }
