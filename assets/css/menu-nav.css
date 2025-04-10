@@ -1,0 +1,120 @@
+.menu-btn {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+
+.menu-btn div {
+  width: 100%;
+  height: 5px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#menu-btn.active > div:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px); /* Rotar y desplazar la primera línea */
+}
+
+#menu-btn.active > div:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-btn.active > div:nth-child(3) {
+  transform: rotate(-45deg) translate(10px, -10px);
+}
+
+nav {
+  margin-left: 1rem;
+}
+
+#nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  transition: all 0.3s;
+}
+
+/* Enlaces del menú */
+#nav-menu li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+
+#nav-menu li a:hover {
+  background-color: #123f69;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: flex;
+  }
+
+  #nav-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #195791;
+    top: 100%; /* Aparece justo debajo del botón de menú */
+    top: 60px;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición gradual para la aparición */
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px); /* Lo colocamos ligeramente por encima */
+    padding: 0.5rem;
+    border-radius: 10px;
+    z-index: 9999;
+    opacity: 0; /* Comienza oculto */
+    transform-origin: center;
+  }
+
+  /* Cuando se active la clase .active, se muestra el menú con el efecto de deslizamiento */
+  #nav-menu.active {
+    display: flex;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Se desliza hacia abajo */
+  }
+}
+
+@media (min-width: 769px) {
+  #nav-menu {
+    display: flex;
+  }
+
+  #menu-btn {
+    display: none; 
+  }
+}
+
+/* Asegurar que el contenedor ocupe toda la pantalla */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+/* Footer fijo en la parte inferior */
+footer {
+  background-color: #727272; /* Ajusta el color según tu diseño */
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto; /* Empuja el footer hacia abajo */
+}

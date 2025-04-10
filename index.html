@@ -1,11 +1,18 @@
 
-<!DOCTYPE html>
+HTML <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tabla Periodica</title>
-  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla Periódica Interactiva</title>
+  <link rel="stylesheet" href="../assets/css/gral.css">
+  <link rel="stylesheet" href="../assets/css/buttons.css">
+  <link rel="stylesheet" href="../assets/css/containers.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../assets/css/darkmode.css">
+  <link rel="stylesheet" href="../assets/css/lightmode.css">
+  <link rel="stylesheet" href="../assets/css/menu-nav.css">
+
 </head>
 <body>
   <header id="header">
@@ -16,46 +23,98 @@
         <div></div>
         <div></div>
       </button>
-        <nav>
-          <ul id="nav-menu">
-            <li><a href="">Inicio</a></li>
-            <li><a href="./public/about.html">Acerca de</a></li>
-            <li><a href="./public/contact.html">Contacto</a></li>
-            <li><a href="./public/periodic-table.html">Tabla Periódica</a></li>
-          </ul>
-        </nav>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="">Inicio</a></li>
+          <li><a href="./public/about.html">Acerca de</a></li>
+          <li><a href="./public/contact.html">Contacto</a></li>
+          <li><a href="./public/periodic-table.html">Tabla Periódica</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+  <button id="modo-toggle" class="switch">
+    <span id="modo-claro" class="switch-text"></span>
+    <span id="modo-oscuro" class="switch-text"></span>
+    <div class="switch-toggle"></div>
+  </button>
+
+  <header>
+    <h1>Explora el universo de los elementos</h1>
+    <p class="subtitulo">Una tabla periódica interactiva que va más allá de los símbolos.</p>
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Bienvenidos a Tu Tabla Periodica Favorita</h1>
-      <p>
-        Explora los elementos de la tabla periódica de manera interactiva.
-        <br />
-        Instituto Tecnologico de Matamoros
-        <br />
-        Ingenieria en Sistemas Computacionales 
-      </p>
-      <a href="./public/periodic-table.html" class="cta-button">Ver Tabla</a>
+    <section class="intro">
+      <p>¿Sabías que el universo, tu cuerpo y todo lo que te rodea está hecho de elementos químicos? En esta tabla periódica interactiva podrás descubrir propiedades, curiosidades, aplicaciones y mucho más sobre cada elemento.</p>
     </section>
 
-    <section id="table">
-      <!-- Aquí puedes agregar la tabla periódica -->
+    <section class="botones">
+      <button>🔍 Explorar Elementos</button>
+      <button>⚗️ Propiedades</button>
+      <button>💡 Usos</button>
+      <button>🧬 Historia</button>
+      <button>🎮 Juegos</button>
+    </section>
+
+    <section class="sabias">
+      <h2>¿Sabías que...?</h2>
+      <p>El oxígeno representa el 65% del peso del cuerpo humano.</p>
+    </section>
+
+    <section class="elemento-dia">
+      <h2>Elemento del día: Carbono (C)</h2>
+      <p>Fundamental para la vida como la conocemos.</p>
+    </section>
+
+    <section class="exploracion">
+      <h2>Elige tu modo</h2>
+      <button>🗺️ Modo libre</button>
+      <button>🧪 Modo guiado</button>
+    </section>
+
+    <section class="cita">
+      <blockquote>
+        “Nada en la vida debe ser temido, solo comprendido. Ahora es el momento de comprender más, para temer menos.”
+        <cite>— Marie Curie</cite>
+      </blockquote>
     </section>
   </main>
 
-  <footer id="footer">
-    <p>&copy; 2025 Tabla Periodica Interactiva. Todos los derechos reservados.</p>
+  <footer>
+    <p>© 2025 Tabla Periódica Interactiva - Creado por Francisco</p>
+    
   </footer>
 
-  <script>const menuBtn = document.getElementById('menu-btn');
-    const navMenu = document.getElementById('nav-menu');
+  <script>
+const switchButton = document.querySelector('.switch');
 
-    menuBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });</script>
+switchButton.addEventListener('click', () => {
+  // Alternar la clase 'active' para cambiar el estado
+  switchButton.classList.toggle('active');
+  
+  // Cambiar el texto según el estado
+  const modoClaro = document.getElementById('modo-claro');
+  const modoOscuro = document.getElementById('modo-oscuro');
+  
+  if (switchButton.classList.contains('active')) {
+    modoClaro.style.opacity = 0; // Ocultar el texto Claro
+    modoOscuro.style.opacity = 1; // Mostrar el texto Oscuro
+  } else {
+    modoClaro.style.opacity = 1; // Mostrar el texto Claro
+    modoOscuro.style.opacity = 0; // Ocultar el texto Oscuro
+  }
+});
 
- 
+
+      const menuBtn = document.getElementById('menu-btn');
+       const navMenu = document.getElementById('nav-menu');
+   
+       menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+         navMenu.classList.toggle('active');
+       });
+    
+  </script>
 </body>
 </html>

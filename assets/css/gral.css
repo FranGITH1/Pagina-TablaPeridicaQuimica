@@ -1,0 +1,38 @@
+/* Estilos Generales */
+html, body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  background-color: #007acc;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+main {
+  flex :1;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #e6e6e6;
+  color: #333;
+}

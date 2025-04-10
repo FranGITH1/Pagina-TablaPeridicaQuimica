@@ -2,8 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Acerca de Nosotros</title>
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propósito de la Tabla Periódica</title>
+  <link rel="stylesheet" href="../assets/css/gral.css">
+  <link rel="stylesheet" href="../assets/css/buttons.css">
+  <link rel="stylesheet" href="../assets/css/containers.css">
+  <link rel="stylesheet" href="../assets/css/contact.css">
+  <link rel="stylesheet" href="../assets/css/darkmode.css">
+  <link rel="stylesheet" href="../assets/css/lightmode.css">
+  <link rel="stylesheet" href="../assets/css/menu-nav.css">
 </head>
 <body>
   <header id="header">
@@ -19,52 +26,59 @@
             <li><a href="../index.html">Inicio</a></li>
             <li><a href="/public/about.html">Acerca de</a></li>
             <li><a href="/public/contact.html">Contacto</a></li>
-            <li><a href="periodic-table.html">Tabla Periódica</a></li>
+          <li><a href="periodic-table.html" class="active">Tabla Periódica</a></li>
           </ul>
         </nav>
     </div>
   </header>
 
+  <button id="modo-toggle" class="switch">
+    <span id="modo-claro" class="switch-text"></span>
+    <span id="modo-oscuro" class="switch-text"></span>
+    <div class="switch-toggle"></div>
+  </button>
+
   <main>
-    <section id="quienes-somos">
-      <h2>Quiénes Somos</h2>
+    <!-- Introducción -->
+    <section id="introduccion">
+      <h1>Propósito de la Tabla Periódica</h1>
       <p>
-        Somos una empresa comprometida con la excelencia y la innovación. Nuestro equipo está 
-        integrado por profesionales de diversas áreas que comparten la misma pasión por ayudar 
-        a nuestros clientes a alcanzar sus objetivos.
+        La tabla periódica es una de las herramientas más importantes en la química. Su propósito principal es organizar los elementos químicos de manera que se puedan identificar patrones y relaciones entre ellos. A través de esta organización, podemos predecir propiedades, comportamientos y reacciones de los elementos en distintas circunstancias.
       </p>
     </section>
 
-    <section id="mision">
-      <h2>Misión</h2>
+    <!-- Historia y Evolución de la Tabla Periódica -->
+    <section id="historia">
+      <h2>Historia y Evolución</h2>
       <p>
-        Brindar soluciones integrales y de calidad que impulsen el crecimiento de nuestros 
-        clientes, contribuyendo al desarrollo económico y social de nuestra comunidad.
+        La tabla periódica fue desarrollada por el químico ruso Dmitri Mendeléyev en 1869. Su innovación consistió en organizar los elementos según sus propiedades químicas y sus masas atómicas. A lo largo de los años, la tabla periódica ha evolucionado, adaptándose a los nuevos descubrimientos y a la comprensión de la estructura atómica.
       </p>
     </section>
 
-    <section id="vision">
-      <h2>Visión</h2>
+    <!-- Importancia de la Tabla Periódica -->
+    <section id="importancia">
+      <h2>Importancia y Aplicaciones</h2>
       <p>
-        Ser líderes en el mercado nacional e internacional, reconocidos por nuestro enfoque 
-        innovador y nuestro compromiso con la satisfacción del cliente.
+        La tabla periódica es crucial para el estudio de la química y la física, ya que permite comprender cómo se comportan los elementos y cómo interactúan entre sí. Además, sus aplicaciones van más allá de los laboratorios, influyendo en áreas como la medicina, la ingeniería y la tecnología. Sin la tabla periódica, muchas de las innovaciones científicas y tecnológicas que damos por sentadas no serían posibles.
       </p>
     </section>
 
-    <section id="valores">
-      <h2>Valores</h2>
-      <ul>
-        <li><strong>Integridad:</strong> Actuamos de manera ética y honesta en todo momento.</li>
-        <li><strong>Responsabilidad:</strong> Cumplimos con nuestros compromisos y nos hacemos cargo de nuestras acciones.</li>
-        <li><strong>Respeto:</strong> Valoramos la diversidad de ideas y culturas, fomentando una convivencia armoniosa.</li>
-        <li><strong>Colaboración:</strong> Creemos en el trabajo en equipo como motor de la creatividad y la eficiencia.</li>
-      </ul>
+    <!-- Cómo utilizar la Tabla Periódica -->
+    <section id="como-usar">
+      <h2>¿Cómo utilizar la Tabla Periódica?</h2>
+      <p>
+        Cada elemento en la tabla periódica está representado por un símbolo químico, seguido de su número atómico y su masa atómica. Los elementos se agrupan en columnas llamadas "grupos" y filas llamadas "períodos". Los elementos en el mismo grupo tienen propiedades similares, lo que facilita el estudio de sus características.
+      </p>
+      <p>
+        Para ver más detalles, puedes explorar nuestra <a href="periodic-table.html">Tabla Periódica Interactiva</a> donde podrás acceder a la información de cada elemento de manera más visual y dinámica.
+      </p>
     </section>
 
+    <!-- Contacto -->
     <section id="contacto">
       <h2>Contacto</h2>
       <p>
-        Si deseas saber más sobre nosotros o tienes alguna pregunta, por favor,
+        Si deseas saber más sobre la tabla periódica o tienes alguna pregunta relacionada con la química, por favor, 
         <a href="mailto:info@empresa.com">contáctanos</a>.
       </p>
     </section>
@@ -72,9 +86,32 @@
 
   <footer>
     <p>&copy; 2025 Nuestra Empresa. Todos los derechos reservados.</p>
+    <p>Desarrollado en colaboración con el Tecnológico de Matamoros.</p>
   </footer>
-  <script>const menuBtn = document.getElementById('menu-btn');
-    const navMenu = document.getElementById('nav-menu');
+
+  <script>
+
+    // Obtener el botón y agregar el evento de clic
+const switchButton = document.querySelector('.switch');
+
+switchButton.addEventListener('click', () => {
+  // Alternar la clase 'active' para cambiar el estado
+  switchButton.classList.toggle('active');
+  
+  // Cambiar el texto según el estado
+  const modoClaro = document.getElementById('modo-claro');
+  const modoOscuro = document.getElementById('modo-oscuro');
+  
+  if (switchButton.classList.contains('active')) {
+    modoClaro.style.opacity = 0; // Ocultar el texto Claro
+    modoOscuro.style.opacity = 1; // Mostrar el texto Oscuro
+  } else {
+    modoClaro.style.opacity = 1; // Mostrar el texto Claro
+    modoOscuro.style.opacity = 0; // Ocultar el texto Oscuro
+  }
+});
+    const menuBtn = document.getElementById('menu-btn');
+    const navMenu = document.getElementById('#nav-menu');
 
     menuBtn.addEventListener('click', () => {
       navMenu.classList.toggle('active');

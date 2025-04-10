@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tabla Periódica</title>
     <link rel="stylesheet" href="../assets/css/styles.css"/>
+    <link rel="stylesheet" href="../assets/css/gral.css">
+    <link rel="stylesheet" href="../assets/css/buttons.css">
+    <link rel="stylesheet" href="../assets/css/containers.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/menu-nav.css">
   </head>
   <header id="header">
     <div></div>
@@ -62,12 +67,33 @@
     <script src="../assets/javascript/main.js"></script>
 
      <script>
-     const menuBtn = document.getElementById('menu-btn');
-      const navMenu = document.getElementById('nav-menu');
+     const switchButton = document.querySelector('.switch');
+
+switchButton.addEventListener('click', () => {
+  // Alternar la clase 'active' para cambiar el estado
+  switchButton.classList.toggle('active');
   
-      menuBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-      });
+  // Cambiar el texto según el estado
+  const modoClaro = document.getElementById('modo-claro');
+  const modoOscuro = document.getElementById('modo-oscuro');
+  
+  if (switchButton.classList.contains('active')) {
+    modoClaro.style.opacity = 0; // Ocultar el texto Claro
+    modoOscuro.style.opacity = 1; // Mostrar el texto Oscuro
+  } else {
+    modoClaro.style.opacity = 1; // Mostrar el texto Claro
+    modoOscuro.style.opacity = 0; // Ocultar el texto Oscuro
+  }
+});
+
+
+      const menuBtn = document.getElementById('menu-btn');
+       const navMenu = document.getElementById('nav-menu');
+   
+       menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+         navMenu.classList.toggle('active');
+       });
       
     </script>
   </body>

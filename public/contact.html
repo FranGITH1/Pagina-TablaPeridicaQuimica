@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
-    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/gral.css">
+    <link rel="stylesheet" href="../assets/css/buttons.css">
+    <link rel="stylesheet" href="../assets/css/containers.css">
+    <link rel="stylesheet" href="../assets/css/contact.css">
+    <link rel="stylesheet" href="../assets/css/darkmode.css">
+    <link rel="stylesheet" href="../assets/css/lightmode.css">
+    <link rel="stylesheet" href="../assets/css/menu-nav.css">
   </head>
 
   <body>
@@ -27,6 +33,13 @@
       </div>
     </header>
 
+    <button id="modo-toggle" class="switch">
+      <span id="modo-claro" class="switch-text"> </span>
+      <span id="modo-oscuro" class="switch-text"> </span>
+      <div class="switch-toggle"></div>
+    </button>
+  
+
     <main>
       <section id="team">
         <h2>Nuestro Equipo</h2>
@@ -38,7 +51,13 @@
         </div>
         
         <div class="team-member">
-          <img src="" alt="Team Member 2" />
+          <img src="../assets/img/img3.jpg" alt="Team Member 4" />
+          <h3>Melissa Sierra Ramirez</h3>
+          <p>ISC</p>
+        </div>
+        
+        <div class="team-member">
+          <img src="../assets/img/img5.jpg" alt="Team Member 2" />
           <h3>Heidi Aolani Aguilar Colunga</h3>
           <p>ISC</p>
         </div>
@@ -50,23 +69,48 @@
         </div>
         
         <div class="team-member">
-          <img src="" alt="Team Member 3" />
-          <h3>Member Name 3</h3>
-          <p>Career 3</p>
+          <img src="../assets/img/img4.jpg" alt="Team Member 4" />
+          <h3>Pablo Esteban Ovalle Sanchez</h3>
+          <p>ISC</p>
         </div>
+
+        
         <!-- Agrega más miembros del equipo según sea necesario -->
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 Tabla Periodica Interactiva. All rights reserved.</p>
+      <p>&copy; 2025 Tabla Periodica Interactiva - Creada por Francisco </p>
     </footer>
 
     <script>
+
+// Obtener el botón y agregar el evento de clic
+const switchButton = document.querySelector('.switch');
+
+switchButton.addEventListener('click', () => {
+  // Alternar la clase 'active' para cambiar el estado
+  switchButton.classList.toggle('active');
+  
+  // Cambiar el texto según el estado
+  const modoClaro = document.getElementById('modo-claro');
+  const modoOscuro = document.getElementById('modo-oscuro');
+  
+  if (switchButton.classList.contains('active')) {
+    modoClaro.style.opacity = 0; // Ocultar el texto Claro
+    modoOscuro.style.opacity = 1; // Mostrar el texto Oscuro
+  } else {
+    modoClaro.style.opacity = 1; // Mostrar el texto Claro
+    modoOscuro.style.opacity = 0; // Ocultar el texto Oscuro
+  }
+});
+
+
       const menuBtn = document.getElementById('menu-btn');
        const navMenu = document.getElementById('nav-menu');
    
        menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
          navMenu.classList.toggle('active');
        });
        

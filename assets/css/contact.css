@@ -1,0 +1,81 @@
+/* 🌟 Team Section */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.team-member {
+  background-color: #2b2929;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: center;
+  flex: 1 1 300px;
+}
+
+.team-member img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.team-member h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-shadow: #000;
+}
+
+.team-member p {
+  font-size: 1em;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.team-member h3 {
+  color: white;
+}
+
+.team-member a {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.team-member a:hover {
+  background-color: #e9e9e9;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .team {
+    flex-direction: column; /* Cambiar la dirección del layout a columna en móviles */
+    align-items: center; /* Centrar los miembros del equipo */
+  }
+
+  .team-member {
+    width: 100%; /* Hacer que cada miembro ocupe el 100% del ancho */
+    margin: 10px 0; /* Ajustar márgenes para una mejor apariencia */
+  }
+}
+
+/* Estilos para escritorio */
+@media (max-width: 769px) {
+  .team {
+    flex-direction: row; /* Mantener el diseño en fila para pantallas grandes */
+  }
+
+  .team-member {
+    flex: 1 1 300px; /* Asegura que los miembros del equipo se distribuyan uniformemente */
+  }
+}
+
+
+
