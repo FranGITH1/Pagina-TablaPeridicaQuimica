@@ -1,0 +1,44 @@
+/* Contenedor del texto animado */
+.typewriter {
+  display: inline-block;
+  overflow: hidden; 
+  border-right: 2px solid #f3f3f3; 
+  white-space: nowrap; 
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fuente estilo máquina de escribir */
+  font-size: 10px; 
+  color: #ffffff; 
+  animation: typing 1s steps(40, end), blink 0.5s step-end infinite; /* Animaciones */
+  line-height: 1; /* Asegura que el cursor esté alineado con el texto */
+  width: fit-content; /* Ajusta el ancho al contenido del texto */
+  max-width: 100%; /* Evita que el contenedor crezca más allá del ancho de la ventana */
+  margin: 0 auto;
+ 
+ 
+}
+
+/* Ajustes para pantallas grandes */
+@media (max-width: 1024px) {
+  .typewriter {
+    max-width: 685px; /* Limita el ancho máximo en pantallas grandes */
+  }
+}
+
+/* Animación de escritura */
+@keyframes typing {
+  from {
+    width: 0; /* Comienza desde 0 */
+  }
+  to {
+    width: 100%; /* Termina mostrando todo el texto */
+  }
+}
+
+/* Animación del cursor parpadeante */
+@keyframes blink {
+  from {
+    border-right-color: #e7e7e7; /* Cursor visible */
+  }
+  to {
+    border-right-color: transparent; /* Cursor invisible */
+  }
+}

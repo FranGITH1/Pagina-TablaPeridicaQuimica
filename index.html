@@ -1,5 +1,4 @@
-
-HTML <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -10,15 +9,16 @@ HTML <!DOCTYPE html>
   <link rel="stylesheet" href="../assets/css/containers.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
   <link rel="stylesheet" href="../assets/css/darkmode.css">
-  <link rel="stylesheet" href="../assets/css/lightmode.css">
   <link rel="stylesheet" href="../assets/css/menu-nav.css">
+  <link rel="stylesheet" href="../assets/css/animationtype.css">
+ 
 
 </head>
 <body>
   <header id="header">
     <div></div>
     <div id="menu-container">
-      <button id="menu-btn">
+      <button id="menu-btn" class="menu-btn">
         <div></div>
         <div></div>
         <div></div>
@@ -32,6 +32,7 @@ HTML <!DOCTYPE html>
         </ul>
       </nav>
     </div>
+
   </header>
   <button id="modo-toggle" class="switch">
     <span id="modo-claro" class="switch-text"></span>
@@ -40,7 +41,9 @@ HTML <!DOCTYPE html>
   </button>
 
   <header>
+    <div class="typewriter" >
     <h1>Explora el universo de los elementos</h1>
+  </div>
     <p class="subtitulo">Una tabla periódica interactiva que va más allá de los símbolos.</p>
   </header>
 
@@ -86,8 +89,11 @@ HTML <!DOCTYPE html>
     
   </footer>
 
+ <script src="../assets/javascript/main.js"></script>
   <script>
+// Obtener el botón y agregar el evento de clic
 const switchButton = document.querySelector('.switch');
+const body = document.body;  // Agregar la referencia al body
 
 switchButton.addEventListener('click', () => {
   // Alternar la clase 'active' para cambiar el estado
@@ -100,15 +106,18 @@ switchButton.addEventListener('click', () => {
   if (switchButton.classList.contains('active')) {
     modoClaro.style.opacity = 0; // Ocultar el texto Claro
     modoOscuro.style.opacity = 1; // Mostrar el texto Oscuro
+    body.classList.add('dark-mode');  // Activar el modo oscuro
   } else {
     modoClaro.style.opacity = 1; // Mostrar el texto Claro
     modoOscuro.style.opacity = 0; // Ocultar el texto Oscuro
+    body.classList.remove('dark-mode');  // Desactivar el modo oscuro
   }
 });
 
 
-      const menuBtn = document.getElementById('menu-btn');
-       const navMenu = document.getElementById('nav-menu');
+
+const menuBtn = document.querySelector('.menu-btn');
+const navMenu = document.querySelector('#nav-menu');
    
        menuBtn.addEventListener('click', () => {
         menuBtn.classList.toggle('active');
