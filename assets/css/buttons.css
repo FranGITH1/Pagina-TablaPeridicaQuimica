@@ -24,7 +24,30 @@
 
 .botones button:hover,
 .exploracion button:hover {
+
   background-color: #70a8c4;
+
+  background-color: #005f99;
+}
+
+
+
+/* Contenedor del switch */
+.btn-toggle {
+  position: fixed; /* Fijar en la esquina */
+  top: 10px; /* Distancia desde el top */
+  right: 10px; /* Distancia desde la derecha */
+  width: 50px; /* Reducir el tamaño del switch */
+  height: 30px; /* Reducir la altura */
+  background-color: #ddd;
+  border-radius: 15px; /* Radio del switch */
+  padding: 3px; /* Reducir el padding */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   
 }
 
