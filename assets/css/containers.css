@@ -203,6 +203,13 @@
   }
 }
 
+/* Ocultar los botones de paginación en pantallas de escritorio */
+@media (min-width: 769px) {
+  .pagination {
+    display: none !important;
+  }
+}
+
 .pagination button {
   background-color: #008eec;
   color: white;
