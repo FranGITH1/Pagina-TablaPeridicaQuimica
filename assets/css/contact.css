@@ -7,7 +7,7 @@
 }
 
 .team-member {
-  background-color: #2b2929;
+  background-color: #aca9a9;
   padding: 20px;
   margin: 10px;
   border-radius: 5px;
@@ -24,19 +24,20 @@
 }
 
 .team-member h2 {
-  font-size: 1.5em;
+  font-size: 1.0em;
   margin-bottom: 10px;
-  text-shadow: #000;
+  text-shadow: #000000;
+  color: black;
 }
 
 .team-member p {
   font-size: 1em;
   margin-bottom: 10px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .team-member h3 {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .team-member a {

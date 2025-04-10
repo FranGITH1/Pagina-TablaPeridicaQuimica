@@ -48,10 +48,11 @@ nav {
   text-decoration: none;
   padding: 0.5rem;
   font-weight: 500;
+  z-index: 9999; /* Asegura que el menú esté por encima de otros elementos */
 }
 
 #nav-menu li a:hover {
-  background-color: #123f69;
+  background-color: #3479b9;
   border-radius: 4px;
 }
 
@@ -61,26 +62,27 @@ nav {
   }
 
   #nav-menu {
+    position: fixed; /* Fija el menú en la pantalla */
+    top: 10%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el punto de referencia al centro */
     display: flex;
     flex-direction: column;
-    background-color: #195791;
-    top: 100%; /* Aparece justo debajo del botón de menú */
-    top: 60px;
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición gradual para la aparición */
-    left: 50%;
-    transform: translateX(-50%) translateY(-20px); /* Lo colocamos ligeramente por encima */
-    padding: 0.5rem;
+    background-color: #d8d8d8;
+    padding: 1rem;
     border-radius: 10px;
     z-index: 9999;
     opacity: 0; /* Comienza oculto */
+    pointer-events: none;
     transform-origin: center;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición suave */
   }
-
-  /* Cuando se active la clase .active, se muestra el menú con el efecto de deslizamiento */
+  
+  /* Cuando se active la clase .active, se muestra el menú */
   #nav-menu.active {
-    display: flex;
     opacity: 1;
-    transform: translateX(-50%) translateY(0); /* Se desliza hacia abajo */
+    transform: translate(-50%, -50%) scale(1); /* Asegura que esté centrado */
+    pointer-events: auto;/* Asegura que esté centrado */
   }
 }
 

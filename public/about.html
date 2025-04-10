@@ -8,39 +8,54 @@
   <link rel="stylesheet" href="../assets/css/buttons.css">
   <link rel="stylesheet" href="../assets/css/containers.css">
   <link rel="stylesheet" href="../assets/css/contact.css">
-  <link rel="stylesheet" href="../assets/css/darkmode.css">
-  <link rel="stylesheet" href="../assets/css/lightmode.css">
+  <link rel="stylesheet" href="../assets/css/animationtype.css">
   <link rel="stylesheet" href="../assets/css/menu-nav.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
   <header id="header">
     <div></div>
     <div id="menu-container">
-      <button id="menu-btn">
-        <div></div>
-        <div></div>
-        <div></div>
-      </button>
-        <nav>
-          <ul id="nav-menu">
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="/public/about.html">Acerca de</a></li>
-            <li><a href="/public/contact.html">Contacto</a></li>
-          <li><a href="periodic-table.html" class="active">Tabla Periódica</a></li>
-          </ul>
-        </nav>
+      
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Acerca de</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="periodic-table.html">Tabla Periódica</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
   </header>
 
+  
   <button id="modo-toggle" class="switch">
     <span id="modo-claro" class="switch-text"></span>
     <span id="modo-oscuro" class="switch-text"></span>
     <div class="switch-toggle"></div>
   </button>
+</div>
 
   <main>
-    <!-- Introducción -->
-    <section id="introduccion">
+    
+    <section id="introduccion" class="intro">
       <h1>Propósito de la Tabla Periódica</h1>
       <p>
         La tabla periódica es una de las herramientas más importantes en la química. Su propósito principal es organizar los elementos químicos de manera que se puedan identificar patrones y relaciones entre ellos. A través de esta organización, podemos predecir propiedades, comportamientos y reacciones de los elementos en distintas circunstancias.
@@ -48,7 +63,7 @@
     </section>
 
     <!-- Historia y Evolución de la Tabla Periódica -->
-    <section id="historia">
+    <section id="historia" class="sabias">
       <h2>Historia y Evolución</h2>
       <p>
         La tabla periódica fue desarrollada por el químico ruso Dmitri Mendeléyev en 1869. Su innovación consistió en organizar los elementos según sus propiedades químicas y sus masas atómicas. A lo largo de los años, la tabla periódica ha evolucionado, adaptándose a los nuevos descubrimientos y a la comprensión de la estructura atómica.
@@ -56,7 +71,7 @@
     </section>
 
     <!-- Importancia de la Tabla Periódica -->
-    <section id="importancia">
+    <section id="importancia" class="elemento-dia">
       <h2>Importancia y Aplicaciones</h2>
       <p>
         La tabla periódica es crucial para el estudio de la química y la física, ya que permite comprender cómo se comportan los elementos y cómo interactúan entre sí. Además, sus aplicaciones van más allá de los laboratorios, influyendo en áreas como la medicina, la ingeniería y la tecnología. Sin la tabla periódica, muchas de las innovaciones científicas y tecnológicas que damos por sentadas no serían posibles.
@@ -64,22 +79,25 @@
     </section>
 
     <!-- Cómo utilizar la Tabla Periódica -->
-    <section id="como-usar">
+    <section id="como-usar" class="elemento-dia">
       <h2>¿Cómo utilizar la Tabla Periódica?</h2>
       <p>
         Cada elemento en la tabla periódica está representado por un símbolo químico, seguido de su número atómico y su masa atómica. Los elementos se agrupan en columnas llamadas "grupos" y filas llamadas "períodos". Los elementos en el mismo grupo tienen propiedades similares, lo que facilita el estudio de sus características.
       </p>
       <p>
-        Para ver más detalles, puedes explorar nuestra <a href="periodic-table.html">Tabla Periódica Interactiva</a> donde podrás acceder a la información de cada elemento de manera más visual y dinámica.
+        Para ver más detalles, puedes explorar nuestra  donde podrás acceder a la información de cada elemento de manera más visual y dinámica.
       </p>
     </section>
 
     <!-- Contacto -->
-    <section id="contacto">
+    <section id="contacto" class="exploracion">
+      
       <h2>Contacto</h2>
       <p>
+        
         Si deseas saber más sobre la tabla periódica o tienes alguna pregunta relacionada con la química, por favor, 
-        <a href="mailto:info@empresa.com">contáctanos</a>.
+        <button><a href="contact.html">contáctanos</a></button>
+        
       </p>
     </section>
   </main>
@@ -91,8 +109,9 @@
 
   <script>
 
-    // Obtener el botón y agregar el evento de clic
+   // Obtener el botón y agregar el evento de clic
 const switchButton = document.querySelector('.switch');
+const body = document.body;  // Agregar la referencia al body
 
 switchButton.addEventListener('click', () => {
   // Alternar la clase 'active' para cambiar el estado
@@ -105,16 +124,23 @@ switchButton.addEventListener('click', () => {
   if (switchButton.classList.contains('active')) {
     modoClaro.style.opacity = 0; // Ocultar el texto Claro
     modoOscuro.style.opacity = 1; // Mostrar el texto Oscuro
+    body.classList.add('dark-mode');  // Activar el modo oscuro
   } else {
     modoClaro.style.opacity = 1; // Mostrar el texto Claro
     modoOscuro.style.opacity = 0; // Ocultar el texto Oscuro
+    body.classList.remove('dark-mode');  // Desactivar el modo oscuro
   }
 });
-    const menuBtn = document.getElementById('menu-btn');
-    const navMenu = document.getElementById('#nav-menu');
 
-    menuBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });</script>
+
+
+const menuBtn = document.querySelector('.menu-btn');
+const navMenu = document.querySelector('#nav-menu');
+   
+       menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+         navMenu.classList.toggle('active');
+       });
+    </script>
 </body>
 </html>

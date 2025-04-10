@@ -1,7 +1,8 @@
 .element {
   width: 50px;
   height: 50px;
-  flex: 1 1 auto; /* Permite que los elementos crezcan y se ajusten */
+  display: flex;
+  justify-content: center;
   width: auto; /* Ajusta el ancho automáticamente */
   height: auto; /* Ajusta la altura automáticamente */
 }
@@ -32,12 +33,13 @@
 }
 
 .element {
-  background-color: #747272;
-  color: #fff;
+  width: 80px; /* Ajusta este valor a tu preferencia */
+  height: 80px; /* Ajusta este valor a tu preferencia */
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #757575;
+  color: #fff;
   border-radius: 5px;
   transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
   text-align: center;
@@ -47,10 +49,9 @@
   cursor: pointer;
   overflow: hidden;
   gap: 5px;
-  /* Tamaño relativo de las celdas */
-  width: 100%; /* Usamos un porcentaje para que las celdas se ajusten */
-  height: auto;
+  position: relative;
 }
+
 
 .symbol {
   font-size: 1em;
@@ -256,16 +257,18 @@
   right: 20px;
   font-size: 30px;
   cursor: pointer;
-  color: #fff;
+  color: #ffffff;
 }
 
 /* Estilos para contenedores */
 .sabias,
 .elemento-dia,
 .exploracion,
-.cita {
+.cita
+ {
   background-color: #ffffff;
   padding: 1.5rem;
+  color: #050607;
   border-radius: 10px;
   margin-bottom: 2rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -273,7 +276,7 @@
 
 blockquote {
   font-style: italic;
-  color: #555;
+  color: #5f4e4e;
 }
 
 cite {
@@ -281,13 +284,13 @@ cite {
   margin-top: 1rem;
   text-align: right;
   font-weight: bold;
-  color: #777;
+  color: #464646;
 }
 
 /* 🌟 Estilos para la sección de introducción */
 .intro {
-  background-color: #f5f5f5; /* Fondo claro */
-  color: #333; /* Texto oscuro */
+  background-color: #f8f8f8; /* Fondo claro */
+  color: #000000; /* Texto oscuro */
   padding: 2rem; /* Espaciado interno */
   border-radius: 10px; /* Bordes redondeados */
   margin-bottom: 2rem; /* Espaciado inferior */
@@ -304,5 +307,5 @@ cite {
 .intro p {
   font-size: 1.2rem; /* Tamaño del texto */
   line-height: 1.6; /* Altura de línea */
-  color: #555; /* Color del texto */
+  color: #000000; /* Color del texto */
 }

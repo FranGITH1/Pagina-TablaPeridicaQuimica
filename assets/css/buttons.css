@@ -31,7 +31,7 @@
 
 
 /* Contenedor del switch */
-.switch {
+.btn-toggle {
   position: fixed; /* Fijar en la esquina */
   top: 10px; /* Distancia desde el top */
   right: 10px; /* Distancia desde la derecha */
@@ -45,6 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 /* El círculo del switch */
