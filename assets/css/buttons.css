@@ -9,8 +9,9 @@
 
 .botones button,
 .exploracion button {
-  background-color: #007acc;
+  background-color: #046fb6;
   color: white;
+  font-family:  "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border: none;
   padding: 1rem 2rem;
   border-radius: 8px;
@@ -19,54 +20,24 @@
   transition: background-color 0.2s;
 }
 
+
+
 .botones button:hover,
 .exploracion button:hover {
-  background-color: #005f99;
-}
-
-
-
-
-
-
-
-/* Contenedor del switch */
-.btn-toggle {
-  position: fixed; /* Fijar en la esquina */
-  top: 10px; /* Distancia desde el top */
-  right: 10px; /* Distancia desde la derecha */
-  width: 50px; /* Reducir el tamaño del switch */
-  height: 30px; /* Reducir la altura */
-  background-color: #ddd;
-  border-radius: 15px; /* Radio del switch */
-  padding: 3px; /* Reducir el padding */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-color: #70a8c4;
   
 }
 
-/* El círculo del switch */
-.switch-toggle {
-  position: absolute;
-  top: 5px;
-  left: 5px; /* Empezar desde la izquierda */
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
-  border-radius: 50%;
-  transition: transform 0.3s ease; /* Solo usar la transición transform */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
 
-/* Estilo cuando el modo oscuro está activo */
-.switch.active {
-  background-color: #4e4e4e;
-}
 
-/* Desplazamiento del círculo cuando el modo oscuro está activo */
-.switch.active .switch-toggle {
-  transform: translateX(20px); /* Desplazamiento del círculo */
-}
+
+
+
+
+
+
+
+
+
+
+
