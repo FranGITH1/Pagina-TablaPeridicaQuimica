@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalWeight = document.getElementById("modal-weight");
   const modalType = document.getElementById("modal-type");
   const modalCuriosity = document.getElementById("modal-curiosity");
+  const modalGroup = document.getElementById("modal-group");
+  const modalPeriod = document.getElementById("modal-period");  
   const closeModal = document.querySelector(".close");
 
   let currentPage = 0;
@@ -27,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
     weight: "1.008",
     type: "No-metal",
     curiosity:"El hidrógeno es el elemento más abundante en el universo y representa aproximadamente el 75% de su masa elemental.",
+    group:1,
+    period:1,
   },
   {
     symbol: "He",
@@ -1134,12 +1138,12 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Actualiza el contenido de la sección
     elementoDia.innerHTML = `
-      <h2>Elemento del momento: ${elemento.name} (${elemento.symbol})</h2>
+      <h2>Elemento del dia: ${elemento.name} (${elemento.symbol})</h2>
       <p>${elemento.description}</p>
     `;
      // Cambia cada 24 horas (86400000 ms)
   }
-  setInterval(cambiarElementoDelDia, 8600); // Cambia cada 24 horas (86400000 ms)
+  setInterval(cambiarElementoDelDia, 8); // Cambia cada 24 horas (86400000 ms)
   
   // Llama a la función al cargar la página
   document.addEventListener("DOMContentLoaded", cambiarElementoDelDia);
@@ -1171,9 +1175,9 @@ document.addEventListener("DOMContentLoaded", function () {
           modalNumber.textContent = element.number;
           modalWeight.textContent = element.weight;
           modalCuriosity.textContent = element.curiosity;
-
-          
-          modalType.textContent = element.type || "Desconocido";
+          modalType.textContent = element.type ;
+          modalGroup.textContent = element.group ;
+          modalPeriod.textContent = element.period ;
         }
       });
 
@@ -1212,6 +1216,9 @@ document.addEventListener("DOMContentLoaded", function () {
             modalWeight.textContent = element.weight;
             modalType.textContent = element.type;
             modalCuriosity.textContent = element.curiosity;
+            modalType.textContent = element.type ;
+          modalGroup.textContent = element.group ;
+          modalPeriod.textContent = element.period ;
           }
         });
 

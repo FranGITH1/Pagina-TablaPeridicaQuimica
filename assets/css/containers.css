@@ -7,29 +7,35 @@
   height: auto; /* Ajusta la altura automáticamente */
 }
 
-/* Contenedor principal de la tabla */
+.table-grid {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Primera columna para los periodos, segunda para la tabla */
+  grid-template-rows: auto 1fr;   /* Primera fila para los grupos, segunda para la tabla */
+  gap: 10px;
+  position: relative;
+}
+
+
 .periodic-table-container {
-  width: 100%;
-  height: 120vh; /* Ocupa un 120% del alto de la ventana */
-  padding: 20px 0;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: auto; /* Ajusta la altura automáticamente */
+  padding: 20px; /* Espaciado interno */
   overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
-  box-sizing: border-box;
-  margin: 0;
+  box-sizing: border-box; /* Incluye padding y bordes en el tamaño total */
+  margin: 0 auto; /* Centra el contenedor */
 }
 
 /* Versión de la tabla para escritorio (por defecto) */
 .periodic-table {
+  grid-column: 2 / 3; /* Ocupa la segunda columna */
+  grid-row: 2 / 3;    /* Ocupa la segunda fila */
   display: grid;
   grid-template-columns: repeat(18, 1fr);
   grid-template-rows: repeat(7, auto);
   gap: 5px;
-  padding: 115px;
-  background-color: #333333;
-  border-radius: px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  height: auto; /* Cambiado de 100% para evitar problemas de altura */
-  overflow: hidden;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .element {
@@ -50,6 +56,86 @@
   overflow: hidden;
   gap: 5px;
   position: relative;
+}
+
+.group-labels {
+  grid-column: 2 / 3; /* Ocupa la segunda columna */
+  grid-row: 1 / 2;    /* Ocupa la primera fila */
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background-color: #444;
+  padding: 5px 0;
+  border-radius: 5px;
+}
+.period-labels {
+  grid-column: 1 / 2; /* Ocupa la primera columna */
+  grid-row: 2 / 3;    /* Ocupa la segunda fila */
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background-color: #444;
+  padding: 5px 0;
+  border-radius: 5px;
+}
+
+
+.symbol {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Barra superior decorativa */
+.element::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #ff5555; /* El color que prefieras */
+}
+
+
+/* Versión de la tabla para escritorio (por defecto) */
+.periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(50px, 1fr)); /* 18 columnas ajustables */
+  grid-template-rows: repeat(7, auto); /* 7 filas ajustables */
+  gap: 5px; /* Espaciado entre celdas */
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: auto; /* Ajusta la altura automáticamente */
+  box-sizing: border-box;
+}
+
+.element {
+  width: 100%; /* Ocupa todo el ancho de la celda */
+  height: auto; /* Ajusta la altura automáticamente */
+  aspect-ratio: 1; /* Mantiene una proporción cuadrada */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #757575;
+  color: #fff;
+  border-radius: 5px;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  text-align: center;
+  padding: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #ccc; /* Borde visible */
 }
 
 
@@ -121,9 +207,8 @@
 
 /* 🔥 Efecto hover */
 .element:hover {
-  transform: scale(1.1);
-  background-color: #666;
-  cursor: pointer;
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+  background-color: #666; /* Cambia el color de fondo */
   box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.3);
 }
 
@@ -163,8 +248,11 @@
   }
 
   .element {
-    min-height: 60px;
-    font-size: 0.7em;
+    width: 50px;
+    height: 50px;
+    font-size: 12px;
+
+
   }
 
   .element .symbol {
@@ -243,6 +331,12 @@
   background-color: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
+}
+
+.modal-content p {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 /* 📌 Contenido del modal */

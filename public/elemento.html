@@ -38,36 +38,39 @@
 </div></header>
 <body>
 
-  <div class="elemento-container">
-    <!-- Propiedades del elemento -->
+  <div id="busqueda">
+    <input type="number" id="buscar-numero" placeholder="Buscar por número atómico" min="1" max="118">
+    <button id="buscar-boton">Buscar</button>
+  </div>
+  
+    <div class="contenedor"></div>
     <div class="info" id="info-elemento">
-      <h2 id="nombre-elemento">Nombre del Elemento</h2>
+      <h2 id="nombre-elemento"></h2>
       <div class="propiedad"><strong>Símbolo:</strong> <span id="simbolo">--</span></div>
-      <div class="propiedad"><strong>Número atómico:</strong> <span id="numero-atomico">--</span></div>
-      <div class="propiedad"><strong>Masa atómica:</strong> <span id="masa-atomica">--</span></div>
       <div class="propiedad"><strong>Estado:</strong> <span id="estado">--</span></div>
       <div class="propiedad"><strong>Grupo:</strong> <span id="grupo">--</span></div>
       <div class="propiedad"><strong>Periodo:</strong> <span id="periodo">--</span></div>
       <div class="propiedad"><strong>Electronegatividad:</strong> <span id="electronegatividad">--</span></div>
       <div class="propiedad"><strong>Usos comunes:</strong> <span id="usos">--</span></div>
     </div>
-
-    <!-- Visual del elemento grande -->
     <div class="elemento" id="elemento-visual">
       <h1 id="simbolo-grande">--</h1>
       <span id="numero-atomico-grande">Número atómico: --</span>
       <span id="masa-grande">Masa: -- u</span>
     </div>
+  
+
+  <div id="navegacion">
+    <button id="anterior">Anterior</button>
+    <button id="siguiente">Siguiente</button>
   </div>
 
   
 
 
-
+  <script type="module" src="../assets/javascript/elemento.js"></script>
 </body>
 
-<script type="module" src="../assets/javascript/elemento.js">
 
-
-      </script>
+     
 </html>

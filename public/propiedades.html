@@ -1,256 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="whidth=device-whidth ,initial-scale=1.0">
-        <title>
-            Tabla Periodica 
-        </title>
-        <link rel="stylesheet" href="/assets/css/propiedades.css">
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
-     
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Periódica</title>
+    <link rel="stylesheet" href="/assets/css/propiedades.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header bg-dark text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="#home" class="logo text-white">Tabla<span>Periodica</span></a>
+            <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link text-white" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="about.html">Acerca de</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="periodic-table.html">Tabla Periódica</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-    </head>
-    <body>
-        
-        <header class="header">   
-            <a href="#home" class="logo">Tabla<span>Periodica</span></a>
-            <i class="fi fi-rr-home" id="menu-icon"></i>
-            <div id="menu-container">
-      
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                  <div class="container-fluid">
-                    <a class="navbar-brand" href="#"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                      <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="about.html">Acerca de</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="contact.html">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="periodic-table.html">Tabla Periódica</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </nav>
-              </div>
-        </header>
-        
-        <section class="home" id="home">
-            <div class="home-content">
-                <h1>hi<span></span></h1>
-                <h3 class="text-animation">lll<span></span></h3>
-                <p>
-                    
-                </p>
-                <div class="social-icons">
-  
-                    <a href=""><i class="fi fi-brands-facebook"></i></a>
-                    <a href=""><i class="fi fi-brands-instagram"></i></a>
-                    <a href=""><i class="fi fi-brands-twitter-alt-circle"></i></a>
-                    
-                </div>
-                <div class="btn-group">
-                    <a href="#" class="btn">hire</a>
-                    <a href="#conect" class="btn">conect</a>
-                </div>
-                </div>
-                <div class="home-img">
-                    <img src="portadalitio.gif" alt="">
-                
+    <!-- Home Section -->
+    <section class="home text-center py-5" id="home">
+        <div class="container">
+            <h1>Bienvenido a la <span>Tabla Periodica</span></h1>
+            <h3 class="text-animation">Explora los elementos químicos</h3>
+            <p>Descubre propiedades, curiosidades y aplicaciones de cada elemento.</p>
+            <div class="social-icons d-flex justify-content-center gap-3">
+                <a href="#"><i class="fi fi-brands-facebook"></i></a>
+                <a href="#"><i class="fi fi-brands-instagram"></i></a>
+                <a href="#"><i class="fi fi-brands-twitter-alt-circle"></i></a>
             </div>
-        </section>
-        ////////parte 3//////////////
-       <section class="Politacas" id="Politacas">
-        <h2 class="heading">Que somos</h2>
-        <div class="timeline-items">
+        </div>
+    </section>
 
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
+    <!-- Timeline Section -->
+    <section class="Politacas py-5" id="Politacas">
+        <div class="container">
+            <h2 class="heading text-center mb-4">¿Quiénes somos?</h2>
+            <div class="timeline-items">
+                <div class="timeline-item mb-4">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-date">2025</div>
                     <div class="timeline-content">
-                        <h3>MMMMMMM</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, nihil? Voluptatibus,
-                            pariatur alias corrupti nesciunt doloremque impedit
-                            quam perspiciatis fugit non eos nam voluptas, quod animi inventore, possimus 
-                            temporibus adipisci.</p>
-                    </div>
-               
-            
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                    <div class="timeline-date">2025</div>
-                    <div class="timeline-content">
-                        <h3>MMMMMMM</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, nihil? Voluptatibus,
-                            pariatur alias corrupti nesciunt doloremque impedit
-                            quam perspiciatis fugit non eos nam voluptas, quod animi inventore, possimus 
-                            temporibus adipisci.</p>
-                    </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                    <div class="timeline-date">2025</div>
-                    <div class="timeline-content">
-                        <h3>MMMMMMM</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, nihil? Voluptatibus,
-                            pariatur alias corrupti nesciunt doloremque impedit
-                            quam perspiciatis fugit non eos nam voluptas, quod animi inventore, possimus 
-                            temporibus adipisci.</p>
-                    </div>
-           
-            
-            </div>
-           
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                    <div class="timeline-date">2025</div>
-                    <div class="timeline-content">
-                        <h3>MMMMMMM</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, nihil? Voluptatibus,
-                            pariatur alias corrupti nesciunt doloremque impedit
-                            quam perspiciatis fugit non eos nam voluptas, quod animi inventore, possimus 
-                            temporibus adipisci.</p>
-                    </div>
-            
-            </div>
-          
-       </section>
-    
-
-         <section class="Contacto" id="Contacto">
-            <div class="contacto-box">
-                <h2 class="heading">Colaboradores</h2>
-                    <div class="wrapper">
-                        <div class="contacto-item">
-                            <img src="" alt="">
-                        <h2>ooooo</h2>
-                        <div class="rating">
-                        </div>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing 
-                            elit. Provident quis expedita unde sequi esse amet 
-                            nisi illum qui consectetur iste quae impedit aliquid 
-                            vel repellendus commodi quasi, explicabo voluptate 
-                            rem!</p>
-                      
-                        </div>
-
-                        <div class="contacto-item">
-                            <img src="" alt="">
-                        <h2>ooooo</h2>
-                        <div class="rating">
-                        </div>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing 
-                            elit. Provident quis expedita unde sequi esse amet 
-                            nisi illum qui consectetur iste quae impedit aliquid 
-                            vel repellendus commodi quasi, explicabo voluptate 
-                            rem!</p>
-                      
-                        </div>
-
-                        <div class="contacto-item">
-                            <img src="" alt="">
-                        <h2>ooooo</h2>
-                        <div class="rating">
-                        </div>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing 
-                            elit. Provident quis expedita unde sequi esse amet 
-                            nisi illum qui consectetur iste quae impedit aliquid 
-                            vel repellendus commodi quasi, explicabo voluptate 
-                            rem!</p>
-                      
-                        </div>
-
-                        <div class="contacto-item">
-                            <img src="" alt="">
-                        <h2>ooooo</h2>
-                        <div class="rating">
-                        </div>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing 
-                            elit. Provident quis expedita unde sequi esse amet 
-                            nisi illum qui consectetur iste quae impedit aliquid 
-                            vel repellendus commodi quasi, explicabo voluptate 
-                            rem!</p>
-                      
-                        </div>
-
-                        <div class="contacto-item">
-                            <img src="" alt="">
-                        <h2>ooooo</h2>
-                        <div class="rating">
-                        </div>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing 
-                            elit. Provident quis expedita unde sequi esse amet 
-                            nisi illum qui consectetur iste quae impedit aliquid 
-                            vel repellendus commodi quasi, explicabo voluptate 
-                            rem!</p>
-                      
-                        </div>
+                        <h3>Nuestra Historia</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, nihil? Voluptatibus, pariatur alias corrupti nesciunt doloremque impedit quam perspiciatis fugit non eos nam voluptas.</p>
                     </div>
                 </div>
-         </section>
-       
-         <section class="con" id="con">
-            <h2 class="heading">Contac<span>Me</span></h2>
+                <div class="timeline-item mb-4">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content">
+                        <h3>Nuestra Misión</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, nihil? Voluptatibus, pariatur alias corrupti nesciunt doloremque impedit quam perspiciatis fugit non eos nam voluptas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="Contacto py-5" id="Contacto">
+        <div class="container">
+            <h2 class="heading text-center mb-4">Colaboradores</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contacto-item text-center">
+                        <img src="" alt="Colaborador 1" class="img-fluid mb-3">
+                        <h3>Colaborador 1</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quis expedita unde sequi esse amet nisi illum qui consectetur iste.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contacto-item text-center">
+                        <img src="" alt="Colaborador 2" class="img-fluid mb-3">
+                        <h3>Colaborador 2</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quis expedita unde sequi esse amet nisi illum qui consectetur iste.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contacto-item text-center">
+                        <img src="" alt="Colaborador 3" class="img-fluid mb-3">
+                        <h3>Colaborador 3</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quis expedita unde sequi esse amet nisi illum qui consectetur iste.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="con py-5" id="con">
+        <div class="container">
+            <h2 class="heading text-center mb-4">Contáctanos</h2>
             <form action="">
-                <div class="input-group">
-                    <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Nombre Completo">
                     </div>
-                    <div class="input-box">
-                        <input type="number" placeholder="Phone Numero">
-                        <input type="text" placeholder="Subject">
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" placeholder="Correo Electrónico">
                     </div>
                 </div>
-                <div class="input-group-2">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>      
-                    <input type="submit" value="Send Message" class="btn">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <input type="number" class="form-control" placeholder="Teléfono">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Asunto">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="5" placeholder="Tu mensaje"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
                 </div>
             </form>
-        </section>
-        <footer class="footer">
-            <div class="social">
-                <a href=""><i class="fi fi-brands-facebook"></i></a>
-                <a href=""><i class="fi fi-brands-instagram"></i></a>
-                <a href=""><i class="fi fi-brands-twitter-alt-circle"></i></a>
-                
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container text-center">
+            <div class="social mb-3">
+                <a href="#" class="text-white me-3"><i class="fi fi-brands-facebook"></i></a>
+                <a href="#" class="text-white me-3"><i class="fi fi-brands-instagram"></i></a>
+                <a href="#" class="text-white"><i class="fi fi-brands-twitter-alt-circle"></i></a>
             </div>
-            <ul class="list">
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-            </ul>
-            <p class="copyright">
-                Tabla Periodica |  Proyecto Quimica
-            </p>
-        </footer>
-        <script src="script.js">
-
-        </script>
-    </body>
+            <p class="mb-0">© 2025 Tabla Periódica | Proyecto Química</p>
+        </div>
+    </footer>
+</body>
 </html>
