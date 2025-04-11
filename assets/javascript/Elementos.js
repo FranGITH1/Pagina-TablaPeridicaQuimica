@@ -7,6 +7,10 @@ export const PeriodicTable = [
     weight: "1.008",
     type: "No-metal",
     curiosity:"El hidrógeno es el elemento más abundante en el universo y representa aproximadamente el 75% de su masa elemental.",
+    state:"Gas",
+    group:1,
+    period:1,
+    electronegativity:2.20,
   },
   {
     symbol: "He",

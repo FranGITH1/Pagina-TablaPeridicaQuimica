@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalType = document.getElementById("modal-type");
   const modalCuriosity = document.getElementById("modal-curiosity");
   const modalGroup = document.getElementById("modal-group");
-  const modalPeriod = document.getElementById("modal-period");  
+  const modalPeriod = document.getElementById("modal-period");
+  const modalState = document.getElementById("modal-state");  
   const closeModal = document.querySelector(".close");
 
   let currentPage = 0;
@@ -29,8 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
     weight: "1.008",
     type: "No-metal",
     curiosity:"El hidrógeno es el elemento más abundante en el universo y representa aproximadamente el 75% de su masa elemental.",
-    group:1,
-    period:1,
+    group: 1,
+    period: 1,
+    state:"Gaseoso",
   },
   {
     symbol: "He",
@@ -1178,6 +1180,7 @@ document.addEventListener("DOMContentLoaded", function () {
           modalType.textContent = element.type ;
           modalGroup.textContent = element.group ;
           modalPeriod.textContent = element.period ;
+          modalState.textContent = element.state ;
         }
       });
 
@@ -1219,6 +1222,8 @@ document.addEventListener("DOMContentLoaded", function () {
             modalType.textContent = element.type ;
           modalGroup.textContent = element.group ;
           modalPeriod.textContent = element.period ;
+          modalState.textContent = element.state ;
+          
           }
         });
 

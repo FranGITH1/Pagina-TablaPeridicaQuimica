@@ -30,15 +30,15 @@ document.addEventListener("DOMContentLoaded", function () {
       nombreElemento.textContent = "Elemento no encontrado";
       return;
     }
-
+    
     // Actualiza las secciones del HTML con la información del elemento
     nombreElemento.textContent = element.name;
     simbolo.textContent = element.symbol;
-    estado.textContent = element.state || "Desconocido";
-    grupo.textContent = element.group || "Desconocido";
-    periodo.textContent = element.period || "Desconocido";
-    electronegatividad.textContent = element.electronegativity || "Desconocido";
-    usos.textContent = element.curiosity || "Sin información";
+    estado.textContent = element.state;
+    grupo.textContent = element.group;
+    periodo.textContent = element.period;
+    electronegatividad.textContent = element.electronegativity ;
+    usos.textContent = element.curiosity  ;
     simboloGrande.textContent = element.symbol;
     numeroAtomicoGrande.textContent = `Número atómico: ${element.number}`;
     masaGrande.textContent = `Masa: ${element.weight} u`;
