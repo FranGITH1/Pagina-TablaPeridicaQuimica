@@ -81,3 +81,55 @@ document.addEventListener("DOMContentLoaded", function () {
   // Muestra el primer elemento al cargar la página
   displayElementInfo(currentElementIndex);
 });
+
+export function calcularConfiguracionElectronica(numeroAtomico) {
+  const orbitales = [
+    { nivel: "1s", maxElectrones: 2 },
+    { nivel: "2s", maxElectrones: 2 },
+    { nivel: "2p", maxElectrones: 6 },
+    { nivel: "3s", maxElectrones: 2 },
+    { nivel: "3p", maxElectrones: 6 },
+    { nivel: "4s", maxElectrones: 2 },
+    { nivel: "3d", maxElectrones: 10 },
+    { nivel: "4p", maxElectrones: 6 },
+    { nivel: "5s", maxElectrones: 2 },
+    { nivel: "4d", maxElectrones: 10 },
+    { nivel: "5p", maxElectrones: 6 },
+    { nivel: "6s", maxElectrones: 2 },
+    { nivel: "4f", maxElectrones: 14 },
+    { nivel: "5d", maxElectrones: 10 },
+    { nivel: "6p", maxElectrones: 6 },
+    { nivel: "7s", maxElectrones: 2 },
+    { nivel: "5f", maxElectrones: 14 },
+    { nivel: "6d", maxElectrones: 10 },
+    { nivel: "7p", maxElectrones: 6 },
+  ];
+
+  let configuracion = "";
+  let electronesRestantes = numeroAtomico;
+  const niveles = {}; // Niveles de energía
+
+  for (const orbital of orbitales) {
+    if (electronesRestantes <= 0) break;
+
+    const electronesEnOrbital = Math.min(electronesRestantes, orbital.maxElectrones);
+    configuracion += `${orbital.nivel}<sup>${electronesEnOrbital}</sup> `;
+    electronesRestantes -= electronesEnOrbital;
+
+    const nivelPrincipal = parseInt(orbital.nivel[0]);
+    if (!niveles[nivelPrincipal]) {
+      niveles[nivelPrincipal] = 0;
+    }
+    niveles[nivelPrincipal] += electronesEnOrbital;
+
+  }
+
+  const nivelMasAlto = Math.max(...Object.keys(niveles).map(Number));
+  const electronesDeValencia = niveles[nivelMasAlto];
+  
+
+  return { 
+    configuracion : configuracion.trim(),
+  electronesDeValencia: electronesDeValencia,
+};
+}

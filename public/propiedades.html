@@ -13,7 +13,7 @@
     <!-- Header -->
     <header class="header bg-dark text-white py-3">
         <div class="container d-flex justify-content-between align-items-center">
-            <a href="#home" class="logo text-white">Tabla<span>Periodica</span></a>
+            <a href="#home" class="logo text-white"><span></span></a>
             <nav class="navbar navbar-expand-lg">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -30,105 +30,27 @@
         </div>
     </header>
 
-    <!-- Home Section -->
-    <section class="home text-center py-5" id="home">
-        <div class="container">
-            <h1>Bienvenido a la <span>Tabla Periodica</span></h1>
-            <h3 class="text-animation">Explora los elementos químicos</h3>
-            <p>Descubre propiedades, curiosidades y aplicaciones de cada elemento.</p>
-            <div class="social-icons d-flex justify-content-center gap-3">
-                <a href="#"><i class="fi fi-brands-facebook"></i></a>
-                <a href="#"><i class="fi fi-brands-instagram"></i></a>
-                <a href="#"><i class="fi fi-brands-twitter-alt-circle"></i></a>
-            </div>
-        </div>
-    </section>
+    <div class="content-wrapper">
+        <header>
+          <h1>Información del Elemento</h1>
+        </header>
+        <main>
 
-    <!-- Timeline Section -->
-    <section class="Politacas py-5" id="Politacas">
-        <div class="container">
-            <h2 class="heading text-center mb-4">¿Quiénes somos?</h2>
-            <div class="timeline-items">
-                <div class="timeline-item mb-4">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2025</div>
-                    <div class="timeline-content">
-                        <h3>Nuestra Historia</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, nihil? Voluptatibus, pariatur alias corrupti nesciunt doloremque impedit quam perspiciatis fugit non eos nam voluptas.</p>
-                    </div>
-                </div>
-                <div class="timeline-item mb-4">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2025</div>
-                    <div class="timeline-content">
-                        <h3>Nuestra Misión</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, nihil? Voluptatibus, pariatur alias corrupti nesciunt doloremque impedit quam perspiciatis fugit non eos nam voluptas.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="result-box">
+                <div id="simbolo" class="element-symbol">O</div> <!-- Símbolo del elemento -->
+                <p class="property-label">Configuración Electrónica:</p>
+                <p id="configElectronica">1s² 2s² 2p⁴</p> <!-- Configuración electrónica -->
+                <p class="property-label">Electrones de Valencia:</p>
+                <p id="valencia">6</p> <!-- Electrones de valencia -->
+              </div>
+          
 
-    <!-- Contact Section -->
-    <section class="Contacto py-5" id="Contacto">
-        <div class="container">
-            <h2 class="heading text-center mb-4">Colaboradores</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="contacto-item text-center">
-                        <img src="" alt="Colaborador 1" class="img-fluid mb-3">
-                        <h3>Colaborador 1</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quis expedita unde sequi esse amet nisi illum qui consectetur iste.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contacto-item text-center">
-                        <img src="" alt="Colaborador 2" class="img-fluid mb-3">
-                        <h3>Colaborador 2</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quis expedita unde sequi esse amet nisi illum qui consectetur iste.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contacto-item text-center">
-                        <img src="" alt="Colaborador 3" class="img-fluid mb-3">
-                        <h3>Colaborador 3</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quis expedita unde sequi esse amet nisi illum qui consectetur iste.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="con py-5" id="con">
-        <div class="container">
-            <h2 class="heading text-center mb-4">Contáctanos</h2>
-            <form action="">
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Nombre Completo">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="email" class="form-control" placeholder="Correo Electrónico">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <input type="number" class="form-control" placeholder="Teléfono">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Asunto">
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <textarea class="form-control" rows="5" placeholder="Tu mensaje"></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                </div>
-            </form>
-        </div>
-    </section>
+          <button id="anterior" class="btn btn-primary">Anterior</button>
+          <button id="siguiente" class="btn btn-primary">Siguiente</button>
+           
+        </main>
+      
+      </div>
 
     <!-- Footer -->
     <footer class="footer bg-dark text-white py-4">
@@ -141,5 +63,7 @@
             <p class="mb-0">© 2025 Tabla Periódica | Proyecto Química</p>
         </div>
     </footer>
+
+    <script src="../assets/javascript/configElectronica.js" type="module"></script>
 </body>
 </html>
