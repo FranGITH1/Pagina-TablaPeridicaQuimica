@@ -6,6 +6,7 @@
     <title>Tabla Periódica</title>
     <link rel="stylesheet" href="../assets/css/propiedades.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css">
+    <link rel="stylesheet" href="../assets/css/menu-nav.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -15,18 +16,29 @@
         <div class="container d-flex justify-content-between align-items-center">
             <a href="#home" class="logo text-white"><span></span></a>
             <nav class="navbar navbar-expand-lg">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="../index.html">Menú</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link text-white" href="../index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="about.html">Acerca de</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="periodic-table.html">Tabla Periódica</a></li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="about.html">Acerca de</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacto</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="periodic-table.html">Tabla Periódica</a>
+                      </li>
                     </ul>
+                  </div>
                 </div>
-            </nav>
+              </nav>
         </div>
     </header>
 

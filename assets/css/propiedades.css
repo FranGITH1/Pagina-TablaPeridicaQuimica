@@ -2,9 +2,9 @@
 body {
   background-color: #f8f9fa;
   text-align: center;
-  padding: 2rem;
+  padding: 0; /* Elimina el padding general */
   font-family: 'Arial', sans-serif;
-  margin: 0;
+  margin: auto;
 }
 
 /* Estilo para el símbolo del elemento */
@@ -78,9 +78,11 @@ html, body {
 }
 
 .content-wrapper {
+  margin-top: 50px; /* Espaciado para evitar que el contenido quede debajo del nav */
+  margin-bottom: 50px; /* Espaciado para evitar que el contenido quede debajo del footer */
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
+  min-height: calc(100vh - 100px); /* Ocupa al menos el 100% de la altura de la ventana */
 }
 
 main {
@@ -89,12 +91,17 @@ main {
 
 /* Estilo del footer */
 footer {
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
   background-color: #0d6efd;
   color: white;
   text-align: center;
-  padding: 1rem;
-  font-size: 1rem;
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0; /* Reduce el espacio vertical */
+  position: fixed; /* Fija el footer en la parte inferior */
+  bottom: 0;
+  left: 0;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+  font-size: 0.9rem; /* Reduce el tamaño de la fuente */
 }
 
 /* Estilo para los botones */
@@ -122,43 +129,41 @@ button:disabled {
   transform: none;
 }
 
-/* Estilo para los botones de paginación */
+/* Estilo para los botones de navegación */
 #navegacion {
-  display: flex;
-  justify-content: space-between; /* Espaciado entre los botones */
-  align-items: center;
   position: fixed; /* Fija los botones en la parte inferior */
   bottom: 20px; /* Espaciado desde la parte inferior */
   left: 0;
   right: 0;
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  gap: 20px; /* Espaciado entre los botones */
   z-index: 1000; /* Asegura que estén por encima de otros elementos */
-  padding: 10px 20px;
+  padding: 10px;
   background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Sombra superior */
 }
 
-#navegacion .Button {
-  flex: 1; /* Los botones ocupan el mismo espacio */
-  padding: 20px 40px; /* Tamaño más grande */
-  font-size: 20px; /* Texto más grande */
+/* Estilo para los botones */
+#navegacion button {
+  padding: 15px 30px; /* Tamaño más grande */
+  font-size: 18px; /* Texto más grande */
   font-weight: bold;
   color: #fff;
   background-color: #007bff;
   border: none;
-  border-radius: 12px; /* Bordes más redondeados */
+  border-radius: 12px; /* Bordes redondeados */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 0 10px; /* Espaciado entre los botones */
-  text-align: center;
 }
 
-#navegacion .Button:hover {
+#navegacion button:hover {
   background-color: #0056b3;
-  transform: scale(1.05); /* Efecto de agrandamiento */
+  transform: scale(1.1); /* Efecto de agrandamiento */
 }
 
-#navegacion .Button:disabled {
+#navegacion button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
   transform: none;

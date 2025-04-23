@@ -1,7 +1,6 @@
 import { PeriodicTable } from './Elementos.js';
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Obtén el contenedor de las secciones
   const nombreElemento = document.getElementById("nombre-elemento");
   const simbolo = document.getElementById("simbolo");
   const estado = document.getElementById("estado");
@@ -16,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const botonAnterior = document.getElementById("anterior");
   const botonSiguiente = document.getElementById("siguiente");
 
-  const buscarNumero = document.getElementById("buscar-numero");
+  const inputBuscarNumero = document.getElementById("buscar-numero");
   const buscarBoton = document.getElementById("buscar-boton");
 
   let currentElementIndex = 0; // Índice del elemento actual
@@ -37,16 +36,16 @@ document.addEventListener("DOMContentLoaded", function () {
     estado.textContent = element.state;
     grupo.textContent = element.group;
     periodo.textContent = element.period;
-    electronegatividad.textContent = element.electronegativity ;
-    usos.textContent = element.curiosity  ;
+    electronegatividad.textContent = element.electronegativity;
+    usos.textContent = element.curiosity;
     simboloGrande.textContent = element.symbol;
     numeroAtomicoGrande.textContent = `Número atómico: ${element.number}`;
     masaGrande.textContent = `Masa: ${element.weight} u`;
   }
 
-  // Función para buscar por número atómico
-  buscarBoton.addEventListener("click", function () {
-    const numeroAtomico = parseInt(buscarNumero.value);
+  // Función para buscar un elemento por número atómico
+  function buscarElemento() {
+    const numeroAtomico = parseInt(inputBuscarNumero.value);
 
     if (isNaN(numeroAtomico) || numeroAtomico < 1 || numeroAtomico > PeriodicTable.length) {
       alert("Por favor, ingresa un número atómico válido (1-118).");
@@ -59,6 +58,17 @@ document.addEventListener("DOMContentLoaded", function () {
       displayElementInfo(currentElementIndex);
     } else {
       alert("Elemento no encontrado.");
+    }
+  }
+
+  // Evento para buscar al hacer clic en el botón
+  buscarBoton.addEventListener("click", buscarElemento);
+
+  // Evento para buscar al presionar Enter en el campo de entrada
+  inputBuscarNumero.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Evita el comportamiento predeterminado del Enter
+      buscarElemento(); // Llama a la función de búsqueda
     }
   });
 
