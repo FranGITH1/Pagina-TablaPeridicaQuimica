@@ -34,6 +34,8 @@ body {
   width: 100%; /* Ocupa todo el ancho del contenedor */
 }
 
+
+
 #configElectronica:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
@@ -78,7 +80,7 @@ html, body {
 }
 
 .content-wrapper {
-  margin-top: 50px; /* Espaciado para evitar que el contenido quede debajo del nav */
+  margin-top: 80px; /* Espaciado para evitar que el contenido quede debajo del nav */
   margin-bottom: 50px; /* Espaciado para evitar que el contenido quede debajo del footer */
   display: flex;
   flex-direction: column;
@@ -89,20 +91,7 @@ main {
   flex: 1; /* Hace que el contenido principal ocupe el espacio disponible */
 }
 
-/* Estilo del footer */
-footer {
-  width: 100%; /* Ocupa todo el ancho de la pantalla */
-  background-color: #0d6efd;
-  color: white;
-  text-align: center;
-  padding: 0.5rem 0; /* Reduce el espacio vertical */
-  position: fixed; /* Fija el footer en la parte inferior */
-  bottom: 0;
-  left: 0;
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
-  font-size: 0.9rem; /* Reduce el tamaño de la fuente */
-}
+
 
 /* Estilo para los botones */
 button {
@@ -129,33 +118,31 @@ button:disabled {
   transform: none;
 }
 
-/* Estilo para los botones de navegación */
 #navegacion {
-  position: fixed; /* Fija los botones en la parte inferior */
-  bottom: 20px; /* Espaciado desde la parte inferior */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
   left: 0;
   right: 0;
-  display: flex;
-  justify-content: center; /* Centra los botones horizontalmente */
-  gap: 20px; /* Espaciado entre los botones */
-  z-index: 1000; /* Asegura que estén por encima de otros elementos */
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Sombra superior */
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 /* Estilo para los botones */
 #navegacion button {
-  padding: 15px 30px; /* Tamaño más grande */
-  font-size: 18px; /* Texto más grande */
+  padding: 10px 20px;
+  font-size: 1rem;
   font-weight: bold;
   color: #fff;
   background-color: #007bff;
   border: none;
-  border-radius: 12px; /* Bordes redondeados */
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #navegacion button:hover {

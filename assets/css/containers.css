@@ -167,6 +167,10 @@
     grid-template-columns: repeat(9, 1fr);
   }
 
+  .group-labels { /* Asegúrate de que esta clase esté asociada a los números de los grupos */
+    display: none; /* Oculta los números */
+  }
+
   /* Celdas aún más pequeñas en pantallas chicas */
   .element {
     width: 50px;
