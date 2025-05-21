@@ -208,6 +208,9 @@
 .element.actinido::before {
   background-color: #e91e63;
 } /* Rosa fuerte */
+.element.metal-pobre::before{
+  background-color: #494c76;
+}
 
 /* 🔥 Efecto hover */
 .element:hover {
