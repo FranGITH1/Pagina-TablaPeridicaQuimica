@@ -1,7 +1,7 @@
 import { PeriodicTable } from './Elementos.js';
 import { calcularConfiguracionElectronica } from './elemento.js';
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const simbolo = document.getElementById("simbolo");
   const configElectronica = document.getElementById("configElectronica");
   const valencia = document.getElementById("valencia");
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentElementIndex = 0;
 
-  function displayElementInfo(index) {
+  const displayElementInfo = (index) => {
     const element = PeriodicTable[index];
 
     if (!element) {
@@ -21,26 +21,27 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const {configuracion,electronesDeValencia} = calcularConfiguracionElectronica(element.number);
+    const { configuracion, electronesDeValencia } = calcularConfiguracionElectronica(element.number);
 
     simbolo.textContent = element.symbol;
-    configElectronica.innerHTML = ` ${configuracion}`;
-    valencia.textContent = `${electronesDeValencia}` ;
-  }
+    configElectronica.innerHTML = configuracion;
+    valencia.textContent = electronesDeValencia;
+  };
 
-  botonAnterior.addEventListener("click", function () {
+  botonAnterior.addEventListener("click", () => {
     if (currentElementIndex > 0) {
       currentElementIndex--;
       displayElementInfo(currentElementIndex);
     }
   });
 
-  botonSiguiente.addEventListener("click", function () {
+  botonSiguiente.addEventListener("click", () => {
     if (currentElementIndex < PeriodicTable.length - 1) {
       currentElementIndex++;
       displayElementInfo(currentElementIndex);
     }
   });
 
+  // Mostrar el primer elemento al cargar la página
   displayElementInfo(currentElementIndex);
 });

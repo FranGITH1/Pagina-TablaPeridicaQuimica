@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
     name: "Helio",
     weight: "4.0026",
     type: "Gas-noble",
+    state:"Gas",
+    group:18,
+    period:1,
   },
   {
     symbol: "Li",
@@ -47,7 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
     name: "Litio",
     weight: "6.94",
     type: "Metal-alcalino",
-    curiosity: "El litio se utiliza en baterías recargables para teléfonos móviles, laptops y vehículos eléctricos."
+    curiosity: "El litio se utiliza en baterías recargables para teléfonos móviles, laptops y vehículos eléctricos.",
+    state:"Sólido",
+    group:1,
+    period:2,
   },
   {
     symbol: "Be",
@@ -55,7 +61,10 @@ document.addEventListener("DOMContentLoaded", function () {
     name: "Berilio",
     weight: "9.0122",
     type: "Metal-alcalinoterreo",
-    curiosity: "El berilio se utiliza en aleaciones para aviones y satélites debido a su ligereza y resistencia."
+    curiosity: "El berilio se utiliza en aleaciones para aviones y satélites debido a su ligereza y resistencia.",
+    state:"Sólido", 
+    group:2,
+    period:2,
   },
   {
     symbol: "B",
@@ -63,292 +72,396 @@ document.addEventListener("DOMContentLoaded", function () {
     name: "Boro",
     weight: "10.81",
     type: "Metaloide",
-    curiosity: "El boro se encuentra en detergentes y vidrios resistentes al calor, como el Pyrex."
-  },
-  {
+    curiosity: "El boro se encuentra en detergentes y vidrios resistentes al calor, como el Pyrex.",
+    state: "Sólido",
+    group: 13,
+    period: 2,
+},
+{
     symbol: "C",
     number: 6,
     name: "Carbono",
     weight: "12.011",
     type: "No-metal",
-    curiosity: "El carbono es la base de la vida en la Tierra y forma compuestos como el grafito y los diamantes."
-  },
-  {
+    curiosity: "El carbono es la base de la vida en la Tierra y forma compuestos como el grafito y los diamantes.",
+    state: "Sólido",
+    group: 14,
+    period: 2,
+},
+{
     symbol: "N",
     number: 7,
     name: "Nitrógeno",
     weight: "14.007",
     type: "No-metal",
-    curiosity: "El nitrógeno constituye el 78% del aire que respiramos y es esencial para los fertilizantes."
-  },
-  {
+    curiosity: "El nitrógeno constituye el 78% del aire que respiramos y es esencial para los fertilizantes.",
+    state: "Gas",
+    group: 15,
+    period: 2,
+},
+{
     symbol: "O",
     number: 8,
     name: "Oxígeno",
     weight: "15.999",
     type: "No-metal",
-    curiosity: "El oxígeno es vital para la respiración y constituye aproximadamente el 21% del aire."
-  },
-  {
+    curiosity: "El oxígeno es vital para la respiración y constituye aproximadamente el 21% del aire.",
+    state: "Gas",
+    group: 16,
+    period: 2,
+},
+{
     symbol: "F",
     number: 9,
     name: "Flúor",
     weight: "18.998",
-    type: "Halogeno",
-    curiosity: "El flúor se utiliza en pastas dentales para prevenir caries y en la fabricación de teflón."
-  },
-  {
+    type: "Halógeno",
+    curiosity: "El flúor se utiliza en pastas dentales para prevenir caries y en la fabricación de teflón.",
+    state: "Gas",
+    group: 17,
+    period: 2,
+},
+{
     symbol: "Ne",
     number: 10,
     name: "Neón",
     weight: "20.180",
     type: "Gas-noble",
-    curiosity: "El neón se utiliza en letreros luminosos debido a su capacidad para emitir luz brillante."
-  },
-  {
+    curiosity: "El neón se utiliza en letreros luminosos debido a su capacidad para emitir luz brillante.",
+    state: "Gas",
+    group: 18,
+    period: 2,
+},
+{
     symbol: "Na",
     number: 11,
     name: "Sodio",
     weight: "22.990",
     type: "Metal-alcalino",
-    curiosity: "El sodio es un componente esencial de la sal de mesa y regula el equilibrio de líquidos en el cuerpo."
-  },
-  {
+    curiosity: "El sodio es un componente esencial de la sal de mesa y regula el equilibrio de líquidos en el cuerpo.",
+    state: "Sólido",
+    group: 1,
+    period: 3,
+},
+{
     symbol: "Mg",
     number: 12,
     name: "Magnesio",
     weight: "24.305",
     type: "Metal-alcalinoterreo",
-    curiosity: "El magnesio se utiliza en fuegos artificiales para producir chispas blancas brillantes."
-  },
-  {
+    curiosity: "El magnesio se utiliza en fuegos artificiales para producir chispas blancas brillantes.",
+    state: "Sólido",
+    group: 2,
+    period: 3,
+},
+{
     symbol: "Al",
     number: 13,
     name: "Aluminio",
     weight: "26.982",
-    type: "Metal-de-transicion",
-    curiosity: "El aluminio es ligero y resistente, lo que lo hace ideal para aviones y latas de bebidas."
-  },
-  {
+    type: "Metal-pobre",
+    curiosity: "El aluminio es ligero y resistente, lo que lo hace ideal para aviones y latas de bebidas.",
+    state: "Sólido",
+    group: 13,
+    period: 3,
+},
+{
     symbol: "Si",
     number: 14,
     name: "Silicio",
     weight: "28.085",
     type: "Metaloide",
-    curiosity: "El silicio es el componente principal de los chips electrónicos y los paneles solares."
-  },
-  {
+    curiosity: "El silicio es el componente principal de los chips electrónicos y los paneles solares.",
+    state: "Sólido",
+    group: 14,
+    period: 3,
+},
+{
     symbol: "P",
     number: 15,
     name: "Fósforo",
     weight: "30.974",
     type: "No-metal",
-    curiosity: "El fósforo se encuentra en los fósforos y es esencial para el ADN y los huesos."
-  },
-  {
+    curiosity: "El fósforo se encuentra en los fósforos y es esencial para el ADN y los huesos.",
+    state: "Sólido",
+    group: 15,
+    period: 3,
+},
+{
     symbol: "S",
     number: 16,
     name: "Azufre",
     weight: "32.06",
     type: "No-metal",
-    curiosity: "El azufre se utiliza en la fabricación de pólvora, fósforos y fertilizantes."
-  },
-  {
+    curiosity: "El azufre se utiliza en la fabricación de pólvora, fósforos y fertilizantes.",
+    state: "Sólido",
+    group: 16,
+    period: 3,
+},
+{
     symbol: "Cl",
     number: 17,
     name: "Cloro",
     weight: "35.45",
-    type: "Halogeno",
-    curiosity: "El cloro se utiliza para desinfectar el agua potable y en piscinas."
-  },
-  {
+    type: "Halógeno",
+    curiosity: "El cloro se utiliza para desinfectar el agua potable y en piscinas.",
+    state: "Gas",
+    group: 17,
+    period: 3,
+},
+{
     symbol: "Ar",
     number: 18,
     name: "Argón",
     weight: "39.948",
     type: "Gas-noble",
-    curiosity: "El argón se utiliza en bombillas incandescentes para evitar que el filamento se queme."
-  },
-  {
+    curiosity: "El argón se utiliza en bombillas incandescentes para evitar que el filamento se queme.",
+    state: "Gas",
+    group: 18,
+    period: 3,
+},
+{
     symbol: "K",
     number: 19,
     name: "Potasio",
     weight: "39.098",
     type: "Metal-alcalino",
-    curiosity: "El potasio es esencial para la función muscular y nerviosa en el cuerpo humano."
-  },
-  {
+    curiosity: "El potasio es esencial para la función muscular y nerviosa en el cuerpo humano.",
+    state: "Sólido",
+    group: 1,
+    period: 4,
+},
+{
     symbol: "Ca",
     number: 20,
     name: "Calcio",
     weight: "40.078",
     type: "Metal-alcalinoterreo",
-    curiosity: "El calcio es el componente principal de los huesos y los dientes."
-  },
-  {
+    curiosity: "El calcio es el componente principal de los huesos y los dientes.",
+    state: "Sólido",
+    group: 2,
+    period: 4,
+},
+{
     symbol: "Sc",
     number: 21,
     name: "Escandio",
     weight: "44.956",
-    type: "Metal-de-transicion",
-    curiosity: "El escandio se utiliza en aleaciones ligeras para aviones y equipos deportivos."
-  },
-  {
+    type: "Metal-de-transición",
+    curiosity: "El escandio se utiliza en aleaciones ligeras para aviones y equipos deportivos.",
+    state: "Sólido",
+    group: 3,
+    period: 4,
+},
+{
     symbol: "Ti",
     number: 22,
     name: "Titanio",
     weight: "47.867",
-    type: "Metal-de-transicion",
-    curiosity: "El titanio es conocido por su alta resistencia y se utiliza en implantes médicos y aviones."
-  },
-  {
+    type: "Metal-de-transición",
+    curiosity: "El titanio es conocido por su alta resistencia y se utiliza en implantes médicos y aviones.",
+    state: "Sólido",
+    group: 4,
+    period: 4,
+},
+{
     symbol: "V",
     number: 23,
     name: "Vanadio",
     weight: "50.942",
-    type: "Metal-de-transicion",
-    curiosity: "El vanadio se utiliza en aleaciones de acero para mejorar su resistencia y durabilidad."
-  },
-  {
+    type: "Metal-de-transición",
+    curiosity: "El vanadio se utiliza en aleaciones de acero para mejorar su resistencia y durabilidad.",
+    state: "Sólido",
+    group: 5,
+    period: 4,
+},
+{
     symbol: "Cr",
     number: 24,
     name: "Cromo",
     weight: "51.996",
-    type: "Metal-de-transicion",
-    curiosity: "El cromo se utiliza para dar brillo a los metales y en la fabricación de acero inoxidable."
-  },
-  {
+    type: "Metal-de-transición",
+    curiosity: "El cromo se utiliza para dar brillo a los metales y en la fabricación de acero inoxidable.",
+    state: "Sólido",
+    group: 6,
+    period: 4,
+},
+{
     symbol: "Mn",
     number: 25,
     name: "Manganeso",
     weight: "54.938",
-    type: "Metal-de-transicion",
-    curiosity: "El manganeso se utiliza en la producción de acero y en baterías recargables."
-  },
-  {
+    type: "Metal-de-transición",
+    curiosity: "El manganeso se utiliza en la producción de acero y en baterías recargables.",
+    state: "Sólido",
+    group: 7,
+    period: 4,
+},
+{
     symbol: "Fe",
     number: 26,
     name: "Hierro",
     weight: "55.845",
-    type: "Metal-de-transicion",
-    curiosity: "El hierro es el metal más utilizado en la industria y es esencial para la hemoglobina en la sangre."
-
-  },
-  {
+    type: "Metal-de-transición",
+    curiosity: "El hierro es el metal más utilizado en la industria y es esencial para la hemoglobina en la sangre.",
+    state: "Sólido",
+    group: 8,
+    period: 4,
+},
+{
     symbol: "Co",
     number: 27,
     name: "Cobalto",
     weight: "58.933",
-    type: "Metal-de-transicion",
-    curiosity: "El cobalto se utiliza en baterías recargables y en la fabricación de imanes permanentes."
-  },
-  {
+    type: "Metal-de-transición",
+    curiosity: "El cobalto se utiliza en baterías recargables y en la fabricación de imanes permanentes.",
+    state: "Sólido",
+    group: 9,
+    period: 4,
+},
+{
     symbol: "Ni",
     number: 28,
     name: "Níquel",
     weight: "58.693",
-    type: "Metal-de-transicion",
-    curiosity : "El níquel se utiliza en la fabricación de monedas y en aleaciones resistentes a la corrosión."
-
-  },
-  {
+    type: "Metal-de-transición",
+    curiosity: "El níquel se utiliza en la fabricación de monedas y en aleaciones resistentes a la corrosión.",
+    state: "Sólido",
+    group: 10,
+    period: 4,
+},
+{
     symbol: "Cu",
     number: 29,
     name: "Cobre",
     weight: "63.546",
-    type: "Metal-de-transicion",
-    curiosity : "El cobre es un excelente conductor de electricidad y se utiliza en cables eléctricos y monedas."
-  },
-  {
+    type: "Metal-de-transición",
+    curiosity: "El cobre es un excelente conductor de electricidad y se utiliza en cables eléctricos y monedas.",
+    state: "Sólido",
+    group: 11,
+    period: 4,
+},
+{
     symbol: "Zn",
     number: 30,
     name: "Zinc",
     weight: "65.38",
-    type: "Metal-de-transicion",
-    curiosity : "El zinc se utiliza para recubrir otros metales y prevenir la corrosión."
-  },
-  {
+    type: "Metal-de-transición",
+    curiosity: "El zinc se utiliza para recubrir otros metales y prevenir la corrosión.",
+    state: "Sólido",
+    group: 12,
+    period: 4,
+},
+{
     symbol: "Ga",
     number: 31,
     name: "Galio",
     weight: "69.723",
-    type: "Metal-de-transicion",
-    curiosity : "El galio se funde a temperaturas ligeramente superiores a la del agua y se utiliza en semiconductores."
-  },
-  {
+    type: "Metal-pobre",
+    curiosity: "El galio se funde a temperaturas ligeramente superiores a la del agua y se utiliza en semiconductores.",
+    state: "Sólido",
+    group: 13,
+    period: 4,
+},
+{
     symbol: "Ge",
     number: 32,
     name: "Germanio",
     weight: "72.63",
     type: "Metaloide",
-    curiosity : "El germanio se utiliza en la fabricación de transistores y diodos semiconductores."  
-
-  },
-  {
+    curiosity: "El germanio se utiliza en la fabricación de transistores y diodos semiconductores.",
+    state: "Sólido",
+    group: 14,
+    period: 4,
+},
+{
     symbol: "As",
     number: 33,
     name: "Arsénico",
     weight: "74.922",
     type: "Metaloide",
-    curiosity : "El arsénico se utiliza en la fabricación de semiconductores y en pesticidas."
-
-  },
-  {
+    curiosity: "El arsénico se utiliza en la fabricación de semiconductores y en pesticidas.",
+    state: "Sólido",
+    group: 15,
+    period: 4,
+},
+{
     symbol: "Se",
     number: 34,
     name: "Selenio",
     weight: "78.971",
     type: "No-metal",
-    curiosity : "El selenio se utiliza en la fabricación de paneles solares y en productos electrónicos."
-  },
-  {
+    curiosity: "El selenio se utiliza en la fabricación de paneles solares y en productos electrónicos.",
+    state: "Sólido",
+    group: 16,
+    period: 4,
+},
+{
     symbol: "Br",
     number: 35,
     name: "Bromo",
     weight: "79.904",
-    type: "Halogeno",
-    curiosity : "El bromo se utiliza en productos químicos industriales y en la fabricación de retardantes de llama."
-  },
-  {
+    type: "Halógeno",
+    curiosity: "El bromo se utiliza en productos químicos industriales y en la fabricación de retardantes de llama.",
+    state: "Líquido",
+    group: 17,
+    period: 4,
+},
+{
     symbol: "Kr",
     number: 36,
     name: "Kriptón",
     weight: "83.798",
     type: "Gas-noble",
-    curiosity : "El criptón se utiliza en luces de alta intensidad y en láseres."
-  },
-  {
+    curiosity: "El criptón se utiliza en luces de alta intensidad y en láseres.",
+    state: "Gas",
+    group: 18,
+    period: 4,
+},
+{
     symbol: "Rb",
     number: 37,
     name: "Rubidio",
     weight: "85.468",
     type: "Metal-alcalino",
-    curiosity : "El rubidio se utiliza en relojes atómicos y en investigación científica."
-  },
-  {
+    curiosity: "El rubidio se utiliza en relojes atómicos y en investigación científica.",
+    state: "Sólido",
+    group: 1,
+    period: 5,
+},
+{
     symbol: "Sr",
     number: 38,
     name: "Estroncio",
     weight: "87.62",
     type: "Metal-alcalinoterreo",
-    curiosity : "El estroncio se utiliza en fuegos artificiales para producir llamas rojas brillantes."
-  },
-  {
+    curiosity: "El estroncio se utiliza en fuegos artificiales para producir llamas rojas brillantes.",
+    state: "Sólido",
+    group: 2,
+    period: 5,
+},
+{
     symbol: "Y",
     number: 39,
     name: "Itrio",
     weight: "88.906",
     type: "Metal-de-transicion",
-    curiosity : "El itrio se utiliza en la fabricación de pantallas de televisión y en láseres."
-  },
-  {
+    curiosity: "El itrio se utiliza en la fabricación de pantallas de televisión y en láseres.",
+    state: "Sólido",
+    group: 3,
+    period: 5,
+},
+{
     symbol: "Zr",
     number: 40,
     name: "Circonio",
     weight: "91.224",
-    type: "Metal-de-transicion",   
-    curiosity: "  El circonio se utiliza en la fabricación de joyas y en aplicaciones nucleares."  ,           
-  },
+    type: "Metal-de-transicion",
+    curiosity: "El circonio se utiliza en la fabricación de joyas y en aplicaciones nucleares.",
+    state: "Sólido",
+    group: 4,
+    period: 5,
+},
   {
     symbol: "Nb",
     number: 41,

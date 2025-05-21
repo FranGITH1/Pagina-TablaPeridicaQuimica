@@ -1,6 +1,8 @@
+// Importar tabla periódica
 import { PeriodicTable } from './Elementos.js';
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+  // Elementos del DOM
   const nombreElemento = document.getElementById("nombre-elemento");
   const simbolo = document.getElementById("simbolo");
   const estado = document.getElementById("estado");
@@ -14,132 +16,111 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const botonAnterior = document.getElementById("anterior");
   const botonSiguiente = document.getElementById("siguiente");
-
   const inputBuscarNumero = document.getElementById("buscar-numero");
   const buscarBoton = document.getElementById("buscar-boton");
 
-  let currentElementIndex = 0; // Índice del elemento actual
+  let currentElementIndex = 0;
 
-  // Función para mostrar la información del elemento
+  // Mostrar información del elemento
   function displayElementInfo(index) {
     const element = PeriodicTable[index];
 
     if (!element) {
-      console.error('Elemento no encontrado');
       nombreElemento.textContent = "Elemento no encontrado";
+      console.error("Elemento no encontrado");
       return;
     }
-    
-    // Actualiza las secciones del HTML con la información del elemento
-    nombreElemento.textContent = element.name;
-    simbolo.textContent = element.symbol;
-    estado.textContent = element.state;
-    grupo.textContent = element.group;
-    periodo.textContent = element.period;
-    electronegatividad.textContent = element.electronegativity;
-    usos.textContent = element.curiosity;
-    simboloGrande.textContent = element.symbol;
+
+    nombreElemento.textContent = element.name ;
+    simbolo.textContent = element.symbol ;
+    estado.textContent = element.state ;
+    grupo.textContent = element.group ;
+    periodo.textContent = element.period ;
+    electronegatividad.textContent = element.electronegativity ;
+    usos.textContent = element.curiosity ;
+    simboloGrande.textContent = element.symbol ;
     numeroAtomicoGrande.textContent = `Número atómico: ${element.number}`;
     masaGrande.textContent = `Masa: ${element.weight} u`;
   }
 
-  // Función para buscar un elemento por número atómico
+  // Buscar por número atómico
   function buscarElemento() {
-    const numeroAtomico = parseInt(inputBuscarNumero.value);
-
-    if (isNaN(numeroAtomico) || numeroAtomico < 1 || numeroAtomico > PeriodicTable.length) {
-      alert("Por favor, ingresa un número atómico válido (1-118).");
+    const numero = parseInt(inputBuscarNumero.value);
+    if (isNaN(numero) || numero < 1) {
+      alert("Por favor, ingresa un número atómico válido.");
       return;
     }
 
-    const elementIndex = PeriodicTable.findIndex(el => el.number === numeroAtomico);
-    if (elementIndex !== -1) {
-      currentElementIndex = elementIndex;
-      displayElementInfo(currentElementIndex);
-    } else {
+    const index = PeriodicTable.findIndex(el => el.number === numero);
+    if (index === -1) {
       alert("Elemento no encontrado.");
+    } else {
+      currentElementIndex = index;
+      displayElementInfo(index);
     }
   }
 
-  // Evento para buscar al hacer clic en el botón
+  // Eventos
   buscarBoton.addEventListener("click", buscarElemento);
 
-  // Evento para buscar al presionar Enter en el campo de entrada
-  inputBuscarNumero.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      event.preventDefault(); // Evita el comportamiento predeterminado del Enter
-      buscarElemento(); // Llama a la función de búsqueda
+  inputBuscarNumero.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      buscarElemento();
     }
   });
 
-  // Función para manejar el botón "Anterior"
-  botonAnterior.addEventListener("click", function () {
+  botonAnterior.addEventListener("click", () => {
     if (currentElementIndex > 0) {
-      currentElementIndex--; // Retrocede al elemento anterior
+      currentElementIndex--;
       displayElementInfo(currentElementIndex);
     }
   });
 
-  // Función para manejar el botón "Siguiente"
-  botonSiguiente.addEventListener("click", function () {
+  botonSiguiente.addEventListener("click", () => {
     if (currentElementIndex < PeriodicTable.length - 1) {
-      currentElementIndex++; // Avanza al siguiente elemento
+      currentElementIndex++;
       displayElementInfo(currentElementIndex);
     }
   });
 
-  // Muestra el primer elemento al cargar la página
+  // Mostrar primer elemento al cargar
   displayElementInfo(currentElementIndex);
 });
 
+// ---------------------------------------------
+// Función de configuración electrónica
+// ---------------------------------------------
 export function calcularConfiguracionElectronica(numeroAtomico) {
   const orbitales = [
-    { nivel: "1s", maxElectrones: 2 },
-    { nivel: "2s", maxElectrones: 2 },
-    { nivel: "2p", maxElectrones: 6 },
-    { nivel: "3s", maxElectrones: 2 },
-    { nivel: "3p", maxElectrones: 6 },
-    { nivel: "4s", maxElectrones: 2 },
-    { nivel: "3d", maxElectrones: 10 },
-    { nivel: "4p", maxElectrones: 6 },
-    { nivel: "5s", maxElectrones: 2 },
-    { nivel: "4d", maxElectrones: 10 },
-    { nivel: "5p", maxElectrones: 6 },
-    { nivel: "6s", maxElectrones: 2 },
-    { nivel: "4f", maxElectrones: 14 },
-    { nivel: "5d", maxElectrones: 10 },
-    { nivel: "6p", maxElectrones: 6 },
-    { nivel: "7s", maxElectrones: 2 },
-    { nivel: "5f", maxElectrones: 14 },
-    { nivel: "6d", maxElectrones: 10 },
-    { nivel: "7p", maxElectrones: 6 },
+    { nivel: "1s", max: 2 }, { nivel: "2s", max: 2 }, { nivel: "2p", max: 6 },
+    { nivel: "3s", max: 2 }, { nivel: "3p", max: 6 }, { nivel: "4s", max: 2 },
+    { nivel: "3d", max: 10 }, { nivel: "4p", max: 6 }, { nivel: "5s", max: 2 },
+    { nivel: "4d", max: 10 }, { nivel: "5p", max: 6 }, { nivel: "6s", max: 2 },
+    { nivel: "4f", max: 14 }, { nivel: "5d", max: 10 }, { nivel: "6p", max: 6 },
+    { nivel: "7s", max: 2 }, { nivel: "5f", max: 14 }, { nivel: "6d", max: 10 },
+    { nivel: "7p", max: 6 }
   ];
 
   let configuracion = "";
-  let electronesRestantes = numeroAtomico;
-  const niveles = {}; // Niveles de energía
+  let electrones = numeroAtomico;
+  const niveles = {};
 
-  for (const orbital of orbitales) {
-    if (electronesRestantes <= 0) break;
+  for (const orb of orbitales) {
+    if (electrones <= 0) break;
+    const usados = Math.min(electrones, orb.max);
+    configuracion += `${orb.nivel}<sup>${usados}</sup> `;
+    electrones -= usados;
 
-    const electronesEnOrbital = Math.min(electronesRestantes, orbital.maxElectrones);
-    configuracion += `${orbital.nivel}<sup>${electronesEnOrbital}</sup> `;
-    electronesRestantes -= electronesEnOrbital;
-
-    const nivelPrincipal = parseInt(orbital.nivel[0]);
-    if (!niveles[nivelPrincipal]) {
-      niveles[nivelPrincipal] = 0;
-    }
-    niveles[nivelPrincipal] += electronesEnOrbital;
-
+    const n = parseInt(orb.nivel[0]);
+    niveles[n] = (niveles[n] || 0) + usados;
   }
 
   const nivelMasAlto = Math.max(...Object.keys(niveles).map(Number));
-  const electronesDeValencia = niveles[nivelMasAlto];
-  
+  const electronesValencia = niveles[nivelMasAlto];
 
-  return { 
-    configuracion : configuracion.trim(),
-  electronesDeValencia: electronesDeValencia,
-};
+  return {
+    configuracion: configuracion.trim(),
+    electronesDeValencia: electronesValencia
+  };
 }

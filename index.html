@@ -17,36 +17,17 @@
 
 </head>
 <body class="bg-light">
-  <header id="header">
-    <div></div>
-    <div id="menu-container">
-      
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./public/about.html">Acerca de</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./public/contact.html">Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./public/periodic-table.html">Tabla Periódica</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
+  
+    <div id="header-placeholder"></div>
+
+    <script>
+      fetch("public/menu.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+    </script>
+    
   
 
   </button>
@@ -70,17 +51,14 @@
     
 
     <section class="botones" class="mb-4">
-      <div class="d-flex flex-wrap justify-content-center gap-2">
+      <div class="button-container">
 
         <a href="./public/elemento.html"> <button  >🔍 Explorar Elementos</button></a>
         <a href="./public/propiedades.html"><button >⚗️ Propiedades</button></a>
       <button >💡 Usos</button>
       <button >🧬 Historia</button>
       <button >🎮 Juegos</button>
-
-    
-
-      </div>
+      
     </section>
 
     <section class="sabias">
@@ -93,13 +71,15 @@
       <p>Fundamental para la vida como la conocemos.</p>
     </section>
 
-    <section  class="exploracion">
+    <section  class="button-container">
       <h2>Elige tu modo</h2>
       <a href="./public/periodic-table.html"><button  >🗺️ Modo libre</button></a>
       <button>🧪 Modo guiado</button>
     </section>
 
-    <section class="cita  ">
+
+ 
+    <section class="cita">
       <blockquote>
         “Nada en la vida debe ser temido, solo comprendido. Ahora es el momento de comprender más, para temer menos.”
         <cite>— Marie Curie</cite>
@@ -109,7 +89,6 @@
 
   <footer>
     <p>© 2025 Tabla Periódica Interactiva - Creado por Francisco</p>
-    
   </footer>
 
  
