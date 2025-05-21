@@ -21,7 +21,7 @@
     <div id="header-placeholder"></div>
 
     <script>
-      fetch("./public/menu.html")
+      fetch("public/menu.html")
         .then(response => response.text())
         .then(data => {
           document.getElementById("header-placeholder").innerHTML = data;
