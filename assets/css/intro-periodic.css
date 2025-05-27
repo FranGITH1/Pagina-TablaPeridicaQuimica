@@ -1,0 +1,111 @@
+/* Animación de fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sección principal con fondo claro */
+main {
+  background-color: #f0f8ff;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Bienvenida animada */
+.welcome-message {
+  text-align: center;
+  font-size: 2rem;
+  color: #004080;
+  animation: fadeIn 1.5s ease-out;
+  margin-bottom: 1rem;
+}
+
+/* Explicación introductoria */
+.intro-description {
+  background-color: white;
+  border-left: 6px solid #007acc;
+  padding: 1rem 1.5rem;
+  margin: 1rem auto;
+  max-width: 800px;
+  color: #333;
+  font-size: 1.1rem;
+  animation: fadeIn 2s ease-out;
+}
+
+/* Tabla Periódica en gris */
+#periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  gap: 4px;
+  margin-top: 2rem;
+  animation: fadeIn 2.5s ease-out;
+}
+
+/* Cada celda de elemento */
+#periodic-table .element {
+  background-color: #e0e0e0; /* gris neutro */
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+/* Etiquetas de grupo */
+.group-labels {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .intro-description {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .welcome-message {
+    font-size: 1.5rem;
+  }
+}
+/* Asegurar que el body ocupe toda la altura de la pantalla */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* El contenido principal debe ocupar el espacio disponible */
+main {
+  flex: 1; /* Hace que el contenido principal ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Asegura que el contenido quede arriba */
+  align-items: center;
+  padding: 2rem;
+  background-color: #f0f8ff; /* Azul claro */
+}
+
+/* Estilo para el footer */
+footer {
+  background-color: #004080; /* Azul oscuro */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  width: 100%; /* Asegura que el footer ocupe todo el ancho */
+  margin-top: auto; /* Empuja el footer hacia la parte inferior */
+}
+/* Ocultar etiquetas de grupo en dispositivos móviles */
+@media (max-width: 768px) {
+  .group-labels {
+    display: none;
+  }
+}
