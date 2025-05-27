@@ -6,6 +6,7 @@ const wrongSound = new Audio("../assets/audio/wrong.mp3");
 
 let current = {};
 let score = 0;
+let correctAnswers = 0; // Contador de aciertos consecutivos
 let playerName = ""; // Nombre del jugador
 const scoreboard = []; // Lista de puntajes
 
@@ -27,7 +28,7 @@ function getRandomElement() {
   return PeriodicTable[Math.floor(Math.random() * PeriodicTable.length)];
 }
 
-// Actualizar la scoreboard
+// Actualizar la tabla de scoreboard
 function updateScoreboard() {
   scoreboardTable.innerHTML = ""; // Limpiar la tabla
   scoreboard.forEach(entry => {
@@ -35,6 +36,15 @@ function updateScoreboard() {
     row.innerHTML = `<td>${entry.name}</td><td>${entry.score}</td>`;
     scoreboardTable.appendChild(row);
   });
+}
+
+// Reiniciar el juego
+function resetGame() {
+  alert(`¡Juego terminado! Tu puntaje final es: ${score}`);
+  correctAnswers = 0; // Reinicia los aciertos
+  score = 0; // Reinicia el puntaje
+  scoreP.textContent = `Puntos: 0`;
+  newQuestion(); // Genera una nueva pregunta
 }
 
 // Crear una nueva pregunta
@@ -59,16 +69,19 @@ function newQuestion() {
       if (opt.name === current.name) {
         correctSound.play();
         score++;
+        correctAnswers++;
         scoreP.textContent = `Puntos: ${score}`;
+        if (correctAnswers === 5) {
+          resetGame(); // Reinicia el juego si alcanza 5 aciertos
+        } else {
+          setTimeout(newQuestion, 500);
+        }
       } else {
         wrongSound.play();
-        // Guardar el puntaje en la scoreboard
         scoreboard.push({ name: playerName, score });
         updateScoreboard();
-        score = 0;
-        scoreP.textContent = `Puntos: 0`;
+        resetGame(); // Reinicia el juego si se equivoca
       }
-      setTimeout(newQuestion, 500);
     };
     optionsDiv.appendChild(btn);
   });
