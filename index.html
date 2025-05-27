@@ -15,22 +15,35 @@
   
  
 
-</head>
-<body class="bg-light">
-  
-    <div id="header-placeholder"></div>
-
-    <script>
-      fetch("./public/menu.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("header-placeholder").innerHTML = data;
-        });
-    </script>
-    
-  
-
-  </button>
+  <header id="header">
+    <div></div>
+    <div id="menu-container">
+     
+      <nav class="navbar navbar-expand-lg navbar-light bg-dlight">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./public/about.html">Acerca de</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./public/contact.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./public/periodic-table.html">Tabla Periódica</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
   <header class="text-center mb-4">
     <div class="typewriter" >
     <h1>Explora el universo de los elementos</h1>
